@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Share
+namespace Share 
 {
     using System;
     using System.Collections.Generic;
