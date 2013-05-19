@@ -16,3 +16,12 @@ E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitm
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\Action\obj\Debug\Action.csprojResolveAssemblyReference.cache
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\Action\obj\Debug\Action.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\Action\obj\Debug\Action.pdb
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Action.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Action.pdb
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\EntityFramework.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Share.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Share.pdb
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\EntityFramework.xml
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.csprojResolveAssemblyReference.cache
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.pdb

@@ -13,3 +13,11 @@ E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitm
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\Share\obj\Debug\Share.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\Share\obj\Debug\Share.pdb
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\Share\obj\Debug\Share.csprojResolveAssemblyReference.cache
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\bin\Debug\Share.dll.config
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\bin\Debug\Share.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\bin\Debug\Share.pdb
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\bin\Debug\EntityFramework.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\bin\Debug\EntityFramework.xml
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\obj\Debug\Share.csprojResolveAssemblyReference.cache
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\obj\Debug\Share.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\obj\Debug\Share.pdb
