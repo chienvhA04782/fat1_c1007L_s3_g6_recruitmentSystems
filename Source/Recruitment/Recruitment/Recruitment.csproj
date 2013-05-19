@@ -67,9 +67,10 @@
     <Content Include="Dashboard\Css\Icon\home.png" />
     <Content Include="Dashboard\Css\Icon\people.png" />
     <Content Include="Dashboard\Css\Icon\texturebg.png" />
+    <Content Include="Dashboard\Css\Icon\view_details_icon.gif" />
     <Content Include="Dashboard\Css\TemplateMaster.css" />
     <Content Include="Dashboard\Index.aspx" />
-    <Content Include="Dashboard\JavaScript\CateMenu.js" />
+    <Content Include="Dashboard\JavaScript\Application.js" />
     <Content Include="Login.aspx" />
     <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.min.css" />
