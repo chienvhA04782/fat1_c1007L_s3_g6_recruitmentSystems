@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D8B56FE-F8A9-4102-8A2B-19085282CE71}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Recruitment</RootNamespace>
+    <AssemblyName>Recruitment</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI, Version=2013.1.220.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Telerik\RadControls for ASP.NET AJAX Q1 2013\Bin40\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dashboard\Controls\Interviewer\Index.aspx" />
+    <Content Include="Dashboard\Css\Icon\arrow.png" />
+    <Content Include="Dashboard\Css\Icon\buttons.png" />
+    <Content Include="Dashboard\Css\Icon\home.png" />
+    <Content Include="Dashboard\Css\Icon\people.png" />
+    <Content Include="Dashboard\Css\Icon\texturebg.png" />
+    <Content Include="Dashboard\Css\TemplateMaster.css" />
+    <Content Include="Dashboard\Index.aspx" />
+    <Content Include="Dashboard\JavaScript\CateMenu.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Plugin\Bootstrap\css\bootstrap.css" />
+    <Content Include="Plugin\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Plugin\Bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Plugin\Bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Plugin\Bootstrap\js\bootstrap.js" />
+    <Content Include="Plugin\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Plugin\FontFamily\Helvetical\FontFace.css" />
+    <Content Include="Plugin\FontFamily\Helvetical\Italic\d0697971-6f58-4597-942e-8beabd1adc87.svg" />
+    <Content Include="Plugin\FontFamily\Helvetical\Medium\36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg" />
+    <Content Include="Plugin\FontFamily\Helvetical\Neue\da09f1f1-062a-45af-86e1-2bbdb3dd94f9.svg" />
+    <Content Include="Plugin\FontFamily\Helvetical\Thin\2e309b1b-08b8-477f-bc9e-7067cf0af0b3.svg" />
+    <Content Include="Plugin\jquery-2.0.0.min.js" />
+    <Content Include="Plugin\jquery.session.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dashboard\Controls\Interviewer\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controls\Interviewer\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Index.Master.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Index.Master.designer.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.Master.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.Master.designer.cs">
+      <DependentUpon>Index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Index.Master" />
+    <Content Include="Plugin\FontFamily\Helvetical\Italic\2381d918-136d-444f-8391-db0cba6da388.ttf" />
+    <Content Include="Plugin\FontFamily\Helvetical\Italic\2c056da8-4920-4e20-8c69-8a6b315458a9.woff" />
+    <Content Include="Plugin\FontFamily\Helvetical\Italic\58a5cbff-d570-4c18-a5e3-60868dc07ae8.eot" />
+    <Content Include="Plugin\FontFamily\Helvetical\Medium\07fe0fec-b63f-4963-8ee1-535528b67fdb.eot" />
+    <Content Include="Plugin\FontFamily\Helvetical\Medium\4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf" />
+    <Content Include="Plugin\FontFamily\Helvetical\Medium\60be5c39-863e-40cb-9434-6ebafb62ab2b.woff" />
+    <Content Include="Plugin\FontFamily\Helvetical\Neue\2381d918-136d-444f-8391-db0cba6da388.ttf" />
+    <Content Include="Plugin\FontFamily\Helvetical\Neue\b7693a83-b861-4aa6-85e0-9ecf676bc4d6.eot" />
+    <Content Include="Plugin\FontFamily\Helvetical\Neue\bcf54343-d033-41ee-bbd7-2b77df3fe7ba.woff" />
+    <Content Include="Plugin\FontFamily\Helvetical\Thin\278bef59-6be1-4800-b5ac-1f769ab47430.ttf" />
+    <Content Include="Plugin\FontFamily\Helvetical\Thin\50d35bbc-dfd4-48f1-af16-cf058f69421d.woff" />
+    <Content Include="Plugin\FontFamily\Helvetical\Thin\56be84de-9d60-4089-8df0-0ea6ec786b84.eot" />
+    <Content Include="Dashboard\Index.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Css\" />
+    <Folder Include="JavaScript\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Action\Action.csproj">
+      <Project>{02ea4685-33ac-4147-9cdb-ff88863be22f}</Project>
+      <Name>Action</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Share\Share.csproj">
+      <Project>{2369bc31-10b2-4e4a-8858-b8a8a9c3eaff}</Project>
+      <Name>Share</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:28634/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecruitmentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="RecruitmentEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admins" EntityType="RecruitmentModel.Admin" />
+    <EntitySet Name="Applicants" EntityType="RecruitmentModel.Applicant" />
+    <EntitySet Name="Interviewers" EntityType="RecruitmentModel.Interviewer" />
+    <EntitySet Name="Vacancys" EntityType="RecruitmentModel.Vacancy" />
+    <AssociationSet Name="FK_Applicant_Vacancys" Association="RecruitmentModel.FK_Applicant_Vacancys">
+      <End Role="Vacancys" EntitySet="Vacancys" />
+      <End Role="Applicant" EntitySet="Applicants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Interviewer_Applicant" Association="RecruitmentModel.FK_Interviewer_Applicant">
+      <End Role="Applicant" EntitySet="Applicants" />
+      <End Role="Interviewer" EntitySet="Interviewers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Admin_FullName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Admin_Account" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Admin_Password" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Admin_Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vacancy_Id" Type="Int32" />
+    <Property Name="Applicant_FullName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_FoneNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_CVPath" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_Desription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Applicant_DateRegister" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Vacancy" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Applicant" ToRole="Vacancys" />
+    <NavigationProperty Name="Interviewers" Relationship="RecruitmentModel.FK_Interviewer_Applicant" FromRole="Applicant" ToRole="Interviewer" />
+  </EntityType>
+  <EntityType Name="Interviewer">
+    <Key>
+      <PropertyRef Name="Interviewer_Id" />
+    </Key>
+    <Property Name="Interviewer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Applicant_Id" Type="Int32" />
+    <Property Name="Interviewer_Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Interviewer_Result" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Interviewer_Date" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Interviewer_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Interviewer_Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Applicant" Relationship="RecruitmentModel.FK_Interviewer_Applicant" FromRole="Interviewer" ToRole="Applicant" />
+  </EntityType>
+  <EntityType Name="Vacancy">
+    <Key>
+      <PropertyRef Name="Vacancy_Id" />
+    </Key>
+    <Property Name="Vacancy_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vacancy_Name" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_WorkAddress" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_TypeTime" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Vacancy_Salary" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_Positions" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_NumberPeople" Type="Int32" />
+    <Property Name="Vacancy_Exp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_Gender" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_Age" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_DateStart" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_DateEnd" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_DateUp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Vacancy_Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Applicants" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Vacancys" ToRole="Applicant" />
+  </EntityType>
+  <Association Name="FK_Applicant_Vacancys">
+    <End Role="Vacancys" Type="RecruitmentModel.Vacancy" Multiplicity="0..1" />
+    <End Role="Applicant" Type="RecruitmentModel.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacancys">
+        <PropertyRef Name="Vacancy_Id" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="Vacancy_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Interviewer_Applicant">
+    <End Role="Applicant" Type="RecruitmentModel.Applicant" Multiplicity="0..1" />
+    <End Role="Interviewer" Type="RecruitmentModel.Interviewer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="Interviewer">
+        <PropertyRef Name="Applicant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

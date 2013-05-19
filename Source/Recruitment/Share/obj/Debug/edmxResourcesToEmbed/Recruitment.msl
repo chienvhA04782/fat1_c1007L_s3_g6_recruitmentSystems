@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecruitmentModelStoreContainer" CdmEntityContainer="RecruitmentEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="RecruitmentModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Admin_FullName" ColumnName="Admin_FullName" />
+          <ScalarProperty Name="Admin_Account" ColumnName="Admin_Account" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_Status" ColumnName="Admin_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applicants">
+      <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
+        <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+          <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
+          <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
+          <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
+          <ScalarProperty Name="Applicant_CVPath" ColumnName="Applicant_CVPath" />
+          <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
+          <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
+          <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
+          <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interviewers">
+      <EntityTypeMapping TypeName="RecruitmentModel.Interviewer">
+        <MappingFragment StoreEntitySet="Interviewer">
+          <ScalarProperty Name="Interviewer_Id" ColumnName="Interviewer_Id" />
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="Interviewer_Status" ColumnName="Interviewer_Status" />
+          <ScalarProperty Name="Interviewer_Result" ColumnName="Interviewer_Result" />
+          <ScalarProperty Name="Interviewer_Date" ColumnName="Interviewer_Date" />
+          <ScalarProperty Name="Interviewer_Time" ColumnName="Interviewer_Time" />
+          <ScalarProperty Name="Interviewer_Note" ColumnName="Interviewer_Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacancys">
+      <EntityTypeMapping TypeName="RecruitmentModel.Vacancy">
+        <MappingFragment StoreEntitySet="Vacancys">
+          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+          <ScalarProperty Name="Vacancy_Name" ColumnName="Vacancy_Name" />
+          <ScalarProperty Name="Vacancy_WorkAddress" ColumnName="Vacancy_WorkAddress" />
+          <ScalarProperty Name="Vacancy_TypeTime" ColumnName="Vacancy_TypeTime" />
+          <ScalarProperty Name="Vacancy_Salary" ColumnName="Vacancy_Salary" />
+          <ScalarProperty Name="Vacancy_Positions" ColumnName="Vacancy_Positions" />
+          <ScalarProperty Name="Vacancy_NumberPeople" ColumnName="Vacancy_NumberPeople" />
+          <ScalarProperty Name="Vacancy_Exp" ColumnName="Vacancy_Exp" />
+          <ScalarProperty Name="Vacancy_Gender" ColumnName="Vacancy_Gender" />
+          <ScalarProperty Name="Vacancy_Age" ColumnName="Vacancy_Age" />
+          <ScalarProperty Name="Vacancy_Description" ColumnName="Vacancy_Description" />
+          <ScalarProperty Name="Vacancy_DateStart" ColumnName="Vacancy_DateStart" />
+          <ScalarProperty Name="Vacancy_DateEnd" ColumnName="Vacancy_DateEnd" />
+          <ScalarProperty Name="Vacancy_DateUp" ColumnName="Vacancy_DateUp" />
+          <ScalarProperty Name="Vacancy_Status" ColumnName="Vacancy_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

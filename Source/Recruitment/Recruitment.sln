@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recruitment", "Recruitment\Recruitment.csproj", "{3D8B56FE-F8A9-4102-8A2B-19085282CE71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Action", "Action\Action.csproj", "{02EA4685-33AC-4147-9CDB-FF88863BE22F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Share", "Share\Share.csproj", "{2369BC31-10B2-4E4A-8858-B8A8A9C3EAFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D8B56FE-F8A9-4102-8A2B-19085282CE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D8B56FE-F8A9-4102-8A2B-19085282CE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D8B56FE-F8A9-4102-8A2B-19085282CE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D8B56FE-F8A9-4102-8A2B-19085282CE71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02EA4685-33AC-4147-9CDB-FF88863BE22F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02EA4685-33AC-4147-9CDB-FF88863BE22F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02EA4685-33AC-4147-9CDB-FF88863BE22F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02EA4685-33AC-4147-9CDB-FF88863BE22F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2369BC31-10B2-4E4A-8858-B8A8A9C3EAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2369BC31-10B2-4E4A-8858-B8A8A9C3EAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2369BC31-10B2-4E4A-8858-B8A8A9C3EAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2369BC31-10B2-4E4A-8858-B8A8A9C3EAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

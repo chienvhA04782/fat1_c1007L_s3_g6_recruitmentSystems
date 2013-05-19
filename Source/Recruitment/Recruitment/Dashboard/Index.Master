@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="Recruitment.Dashboard.Index1" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/Plugin/Bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Plugin/Bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="/Dashboard/Css/TemplateMaster.css" rel="stylesheet" />
+    <script src="/Plugin/jquery-2.0.0.min.js"></script>
+    <script src="/Plugin/jquery.session.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="frmDashBoard" runat="server">
+        <telerik:RadScriptManager ID="RadScriptMngDashboard" runat="server"></telerik:RadScriptManager>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12 topbarFix">
+                    <section class="Rheader">
+                    </section>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span12 spanContentMenu">
+                    <div class="span2 spanLeft2">
+                        <span class="title_navigator">MAIN NAVIGATOR</span>
+                        <ul class="menuLeft">
+                            <li>
+                                <a href="/Dashboard/Index.aspx" class="home" id="home">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="vacancy" id="Vacancy">Vacancy</a>
+                            </li>
+                            <li>
+                                <a href="/Dashboard/Controls/Interviewer/Index.aspx" class="interviewer" id="Interviewer">Interviewer</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="span10 spanRight10" style="padding-left: 10px; padding-top: 10px">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <h2 style="font-weight: normal; font-family: Helvetica Neue Italic">Response Design</h2>
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/Dashboard/JavaScript/CateMenu.js"></script>
+    </form>
+</body>
+</html>

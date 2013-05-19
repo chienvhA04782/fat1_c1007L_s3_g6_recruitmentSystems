@@ -1,0 +1,13 @@
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Recruitment.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Recruitment.pdb
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\obj\Debug\Recruitment.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\obj\Debug\Recruitment.pdb
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\obj\Debug\Recruitment.csprojResolveAssemblyReference.cache
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Telerik.Web.UI.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Telerik.Web.UI.xml
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Action.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Share.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\EntityFramework.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Action.pdb
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\Share.pdb
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Recruitment\bin\EntityFramework.xml

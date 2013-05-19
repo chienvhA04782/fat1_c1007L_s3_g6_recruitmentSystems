@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecruitmentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="RecruitmentModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="RecruitmentModel.Store.Admin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Applicant" EntityType="RecruitmentModel.Store.Applicant" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Interviewer" EntityType="RecruitmentModel.Store.Interviewer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vacancys" EntityType="RecruitmentModel.Store.Vacancys" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Applicant_Vacancys" Association="RecruitmentModel.Store.FK_Applicant_Vacancys">
+      <End Role="Vacancys" EntitySet="Vacancys" />
+      <End Role="Applicant" EntitySet="Applicant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Interviewer_Applicant" Association="RecruitmentModel.Store.FK_Interviewer_Applicant">
+      <End Role="Applicant" EntitySet="Applicant" />
+      <End Role="Interviewer" EntitySet="Interviewer" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="Admin_Id" />
+    </Key>
+    <Property Name="Admin_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Admin_FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Admin_Account" Type="nvarchar" MaxLength="50" />
+    <Property Name="Admin_Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="Admin_Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Applicant">
+    <Key>
+      <PropertyRef Name="Applicant_Id" />
+    </Key>
+    <Property Name="Applicant_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Vacancy_Id" Type="int" />
+    <Property Name="Applicant_FullName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicant_FoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicant_Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicant_CVPath" Type="nvarchar" MaxLength="200" />
+    <Property Name="Applicant_Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicant_IP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicant_Desription" Type="ntext" />
+    <Property Name="Applicant_DateRegister" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Interviewer">
+    <Key>
+      <PropertyRef Name="Interviewer_Id" />
+    </Key>
+    <Property Name="Interviewer_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Applicant_Id" Type="int" />
+    <Property Name="Interviewer_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Interviewer_Result" Type="nvarchar" MaxLength="50" />
+    <Property Name="Interviewer_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Interviewer_Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Interviewer_Note" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Vacancys">
+    <Key>
+      <PropertyRef Name="Vacancy_Id" />
+    </Key>
+    <Property Name="Vacancy_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Vacancy_Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Vacancy_WorkAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="Vacancy_TypeTime" Type="nchar" MaxLength="10" />
+    <Property Name="Vacancy_Salary" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_Positions" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_NumberPeople" Type="int" />
+    <Property Name="Vacancy_Exp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_Age" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_Description" Type="ntext" />
+    <Property Name="Vacancy_DateStart" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_DateEnd" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_DateUp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Applicant_Vacancys">
+    <End Role="Vacancys" Type="RecruitmentModel.Store.Vacancys" Multiplicity="0..1" />
+    <End Role="Applicant" Type="RecruitmentModel.Store.Applicant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vacancys">
+        <PropertyRef Name="Vacancy_Id" />
+      </Principal>
+      <Dependent Role="Applicant">
+        <PropertyRef Name="Vacancy_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Interviewer_Applicant">
+    <End Role="Applicant" Type="RecruitmentModel.Store.Applicant" Multiplicity="0..1" />
+    <End Role="Interviewer" Type="RecruitmentModel.Store.Interviewer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applicant">
+        <PropertyRef Name="Applicant_Id" />
+      </Principal>
+      <Dependent Role="Interviewer">
+        <PropertyRef Name="Applicant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

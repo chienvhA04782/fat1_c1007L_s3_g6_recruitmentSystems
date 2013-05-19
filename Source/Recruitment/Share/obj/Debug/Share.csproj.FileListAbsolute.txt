@@ -1,0 +1,7 @@
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\bin\Debug\Share.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\bin\Debug\Share.pdb
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\bin\Debug\EntityFramework.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\bin\Debug\EntityFramework.xml
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\obj\Debug\Share.dll
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\obj\Debug\Share.pdb
+E:\FPT-Aptech\ProjectSemIII\Recruitment_System_Project\Source\Recruitment\Share\bin\Debug\Share.dll.config
