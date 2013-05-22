@@ -14,11 +14,6 @@ namespace Share
     
     public partial class Applicant
     {
-        public Applicant()
-        {
-            this.Interviewers = new HashSet<Interviewer>();
-        }
-    
         public int Applicant_Id { get; set; }
         public Nullable<int> Vacancy_Id { get; set; }
         public string Applicant_FullName { get; set; }
@@ -29,8 +24,9 @@ namespace Share
         public string Applicant_IP { get; set; }
         public string Applicant_Desription { get; set; }
         public string Applicant_DateRegister { get; set; }
+        public string Applicant_Admin_Accept { get; set; }
+        public string Applicant_Client_Confirm { get; set; }
     
         public virtual Vacancy Vacancy { get; set; }
-        public virtual ICollection<Interviewer> Interviewers { get; set; }
     }
 }

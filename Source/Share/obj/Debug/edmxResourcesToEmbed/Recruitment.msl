@@ -25,6 +25,8 @@
           <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
           <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
           <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
+          <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
+          <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -32,12 +34,21 @@
       <EntityTypeMapping TypeName="RecruitmentModel.Interviewer">
         <MappingFragment StoreEntitySet="Interviewer">
           <ScalarProperty Name="Interviewer_Id" ColumnName="Interviewer_Id" />
-          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
           <ScalarProperty Name="Interviewer_Status" ColumnName="Interviewer_Status" />
           <ScalarProperty Name="Interviewer_Result" ColumnName="Interviewer_Result" />
-          <ScalarProperty Name="Interviewer_Date" ColumnName="Interviewer_Date" />
-          <ScalarProperty Name="Interviewer_Time" ColumnName="Interviewer_Time" />
           <ScalarProperty Name="Interviewer_Note" ColumnName="Interviewer_Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="RecruitmentModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+          <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
+          <ScalarProperty Name="Schedule_Time" ColumnName="Schedule_Time" />
+          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

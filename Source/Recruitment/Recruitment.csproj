@@ -62,11 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dashboard\Controls\Interviewer\Index.aspx" />
+    <Content Include="Dashboard\Controls\Interviewer\Update.ascx" />
     <Content Include="Dashboard\Css\Icon\arrow.png" />
     <Content Include="Dashboard\Css\Icon\buttons.png" />
     <Content Include="Dashboard\Css\Icon\home.png" />
     <Content Include="Dashboard\Css\Icon\people.png" />
     <Content Include="Dashboard\Css\Icon\texturebg.png" />
+    <Content Include="Dashboard\Css\Icon\top-bar-icons.png" />
     <Content Include="Dashboard\Css\Icon\view_details_icon.gif" />
     <Content Include="Dashboard\Css\TemplateMaster.css" />
     <Content Include="Dashboard\Index.aspx" />
@@ -96,6 +98,13 @@
     </Compile>
     <Compile Include="Dashboard\Controls\Interviewer\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controls\Interviewer\Update.ascx.cs">
+      <DependentUpon>Update.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controls\Interviewer\Update.ascx.designer.cs">
+      <DependentUpon>Update.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

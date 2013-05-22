@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Index.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Recruitment.Dashboard.Controls.Interviewer.Index" %>
-
+<%@ Register Src="~/Dashboard/Controls/Interviewer/Update.ascx" TagPrefix="uc1" TagName="Update" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -30,7 +30,6 @@
                 </table>
             </div>
             <div class="span7">
-                
             </div>
         </div>
     </div>
@@ -38,71 +37,12 @@
         <div class="span12">
             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                 <ContentTemplate>
-                    <telerik:RadGrid ID="RadGrid_Interviewer" runat="server" AutoGenerateColumns="False" CellSpacing="0" GridLines="None">
-                        <MasterTableView>
-                            <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
-                            <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                                <HeaderStyle Width="20px"></HeaderStyle>
-                            </RowIndicatorColumn>
-                            <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                                <HeaderStyle Width="20px"></HeaderStyle>
-                            </ExpandCollapseColumn>
-                            <Columns>
-                                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" UniqueName="Interviewer_Id" HeaderText="Code">
-                                    <ItemTemplate>
-                                        <%#Eval("Interviewer_Id")%>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
-                            </Columns>
-                            <Columns>
-                                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" UniqueName="NameApllicant" HeaderText="Name Apllicant">
-                                    <ItemTemplate>
-                                        <%#FetchNameApplicantByApplicantId(Convert.ToInt32(Eval("Applicant_Id"))) %>
-                                        <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="/Dashboard/Css/Icon/view_details_icon.gif" Width="13px" />
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
-                            </Columns>
-                            <Columns>
-                                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date">
-                                    <ItemTemplate>
-                                        <%#Eval("Interviewer_Date")%>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
-                            </Columns>
-                            <Columns>
-                                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time">
-                                    <ItemTemplate>
-                                        <%#Eval("Interviewer_Time")%>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
-                            </Columns>
-                            <Columns>
-                                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Status">
-                                    <ItemTemplate>
-                                        <%#FetchTypeStatusInterviewerByStatusCode(Convert.ToString(Eval("Interviewer_Status"))) %>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
-                            </Columns>
-                            <Columns>
-                                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Result">
-                                    <ItemTemplate>
-                                        <%#FetchResultInterViewerByResultCode(Convert.ToString(Eval("Interviewer_Result"))) %>
-                                        <span class="RadButton RadButton_Default rbSkinnedButton">
-                                            <input class="rbDecorated" type="submit" value="Update" onclick='UpdateResult(<%#Eval("Interviewer_Id")%>)' />
-                                        </span>
-                                    </ItemTemplate>
-                                </telerik:GridTemplateColumn>
-                            </Columns>
-                            <EditFormSettings>
-                                <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
-                            </EditFormSettings>
-                            <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
-                        </MasterTableView>
-                        <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
-                        <FilterMenu EnableImageSprites="False"></FilterMenu>
-                    </telerik:RadGrid>
+                    
                 </ContentTemplate>
             </asp:UpdatePanel>
+        </div>
+        <div id="updateControls">
+            <uc1:Update runat="server" ID="Update" />
         </div>
     </div>
 </asp:Content>

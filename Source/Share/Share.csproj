@@ -75,6 +75,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Recruitment.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Schedule.cs">
+      <DependentUpon>Recruitment.tt</DependentUpon>
+    </Compile>
     <Compile Include="Vacancy.cs">
       <DependentUpon>Recruitment.tt</DependentUpon>
     </Compile>
@@ -83,14 +86,12 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="Recruitment.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Recruitment.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="Recruitment.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Recruitment.edmx</DependentUpon>

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Share 
+namespace Share
 {
     using System;
     using System.Collections.Generic;
@@ -17,6 +17,7 @@ namespace Share
         public Vacancy()
         {
             this.Applicants = new HashSet<Applicant>();
+            this.Schedules = new HashSet<Schedule>();
         }
     
         public int Vacancy_Id { get; set; }
@@ -36,5 +37,6 @@ namespace Share
         public string Vacancy_Status { get; set; }
     
         public virtual ICollection<Applicant> Applicants { get; set; }
+        public virtual ICollection<Schedule> Schedules { get; set; }
     }
 }

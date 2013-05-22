@@ -14,10 +14,17 @@ namespace Share
     
     public partial class Admin
     {
+        public Admin()
+        {
+            this.Schedules = new HashSet<Schedule>();
+        }
+    
         public int Admin_Id { get; set; }
         public string Admin_FullName { get; set; }
         public string Admin_Account { get; set; }
         public string Admin_Password { get; set; }
         public Nullable<bool> Admin_Status { get; set; }
+    
+        public virtual ICollection<Schedule> Schedules { get; set; }
     }
 }

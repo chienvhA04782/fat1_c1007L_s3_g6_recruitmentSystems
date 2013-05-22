@@ -49,12 +49,12 @@ namespace Recruitment.Dashboard.Controls.Interviewer {
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// RadGrid_Interviewer control.
+        /// Update control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid RadGrid_Interviewer;
+        protected global::Recruitment.Dashboard.Controls.Interviewer.Update Update;
     }
 }

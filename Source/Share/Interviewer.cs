@@ -15,13 +15,11 @@ namespace Share
     public partial class Interviewer
     {
         public int Interviewer_Id { get; set; }
-        public Nullable<int> Applicant_Id { get; set; }
+        public Nullable<int> Schedule_Id { get; set; }
         public string Interviewer_Status { get; set; }
         public string Interviewer_Result { get; set; }
-        public string Interviewer_Date { get; set; }
-        public string Interviewer_Time { get; set; }
         public string Interviewer_Note { get; set; }
     
-        public virtual Applicant Applicant { get; set; }
+        public virtual Schedule Schedule { get; set; }
     }
 }

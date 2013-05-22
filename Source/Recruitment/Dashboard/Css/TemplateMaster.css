@@ -30,6 +30,7 @@ body {
     font-weight: normal;
     color: #404040;
 }
+
 #mask {
     background: #000;
     position: fixed;
@@ -220,3 +221,21 @@ div h3.titleModule {
     font-weight: normal;
     display: block;
 }
+
+.popup_Bar {
+    width: 100%;
+    border-bottom: 1px solid #d1d0d1;
+}
+
+    .popup_Bar span.spanLeft {
+        float: left;
+        width: 80%;
+    }
+
+    .popup_Bar span.spanRight {
+        float: right;
+        width: 100px;
+        background: url(Icon/top-bar-icons.png) no-repeat scroll 0px -40px;
+        width: 30px;
+        height: 20px;
+    }

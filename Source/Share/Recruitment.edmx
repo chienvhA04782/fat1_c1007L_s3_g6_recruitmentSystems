@@ -9,14 +9,23 @@
           <EntitySet Name="Admin" EntityType="RecruitmentModel.Store.Admin" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Applicant" EntityType="RecruitmentModel.Store.Applicant" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Interviewer" EntityType="RecruitmentModel.Store.Interviewer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Schedule" EntityType="RecruitmentModel.Store.Schedule" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Vacancys" EntityType="RecruitmentModel.Store.Vacancys" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Applicant_Vacancys" Association="RecruitmentModel.Store.FK_Applicant_Vacancys">
             <End Role="Vacancys" EntitySet="Vacancys" />
             <End Role="Applicant" EntitySet="Applicant" />
           </AssociationSet>
-          <AssociationSet Name="FK_Interviewer_Applicant" Association="RecruitmentModel.Store.FK_Interviewer_Applicant">
-            <End Role="Applicant" EntitySet="Applicant" />
+          <AssociationSet Name="FK_Interviewer_Schedule" Association="RecruitmentModel.Store.FK_Interviewer_Schedule">
+            <End Role="Schedule" EntitySet="Schedule" />
             <End Role="Interviewer" EntitySet="Interviewer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Admin" Association="RecruitmentModel.Store.FK_Schedule_Admin">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Vacancys" Association="RecruitmentModel.Store.FK_Schedule_Vacancys">
+            <End Role="Vacancys" EntitySet="Vacancys" />
+            <End Role="Schedule" EntitySet="Schedule" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Admin">
@@ -43,18 +52,28 @@
           <Property Name="Applicant_IP" Type="nvarchar" MaxLength="50" />
           <Property Name="Applicant_Desription" Type="ntext" />
           <Property Name="Applicant_DateRegister" Type="nvarchar" MaxLength="50" />
+          <Property Name="Applicant_Admin_Accept" Type="nchar" MaxLength="10" />
+          <Property Name="Applicant_Client_Confirm" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Interviewer">
           <Key>
             <PropertyRef Name="Interviewer_Id" />
           </Key>
           <Property Name="Interviewer_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Applicant_Id" Type="int" />
+          <Property Name="Schedule_Id" Type="int" />
           <Property Name="Interviewer_Status" Type="nvarchar" MaxLength="50" />
           <Property Name="Interviewer_Result" Type="nvarchar" MaxLength="50" />
-          <Property Name="Interviewer_Date" Type="nvarchar" MaxLength="50" />
-          <Property Name="Interviewer_Time" Type="nvarchar" MaxLength="50" />
           <Property Name="Interviewer_Note" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Schedule_Id" />
+          </Key>
+          <Property Name="Schedule_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Schedule_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Schedule_Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vacancy_Id" Type="int" />
+          <Property Name="Admin_Id" Type="int" />
         </EntityType>
         <EntityType Name="Vacancys">
           <Key>
@@ -88,15 +107,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Interviewer_Applicant">
-          <End Role="Applicant" Type="RecruitmentModel.Store.Applicant" Multiplicity="0..1" />
+        <Association Name="FK_Interviewer_Schedule">
+          <End Role="Schedule" Type="RecruitmentModel.Store.Schedule" Multiplicity="0..1" />
           <End Role="Interviewer" Type="RecruitmentModel.Store.Interviewer" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Applicant">
-              <PropertyRef Name="Applicant_Id" />
+            <Principal Role="Schedule">
+              <PropertyRef Name="Schedule_Id" />
             </Principal>
             <Dependent Role="Interviewer">
-              <PropertyRef Name="Applicant_Id" />
+              <PropertyRef Name="Schedule_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Admin">
+          <End Role="Admin" Type="RecruitmentModel.Store.Admin" Multiplicity="0..1" />
+          <End Role="Schedule" Type="RecruitmentModel.Store.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Admin_Id" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="Admin_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Vacancys">
+          <End Role="Vacancys" Type="RecruitmentModel.Store.Vacancys" Multiplicity="0..1" />
+          <End Role="Schedule" Type="RecruitmentModel.Store.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancys">
+              <PropertyRef Name="Vacancy_Id" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="Vacancy_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -109,14 +152,23 @@
           <EntitySet Name="Admins" EntityType="RecruitmentModel.Admin" />
           <EntitySet Name="Applicants" EntityType="RecruitmentModel.Applicant" />
           <EntitySet Name="Interviewers" EntityType="RecruitmentModel.Interviewer" />
+          <EntitySet Name="Schedules" EntityType="RecruitmentModel.Schedule" />
           <EntitySet Name="Vacancys" EntityType="RecruitmentModel.Vacancy" />
+          <AssociationSet Name="FK_Schedule_Admin" Association="RecruitmentModel.FK_Schedule_Admin">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Schedule" EntitySet="Schedules" />
+          </AssociationSet>
           <AssociationSet Name="FK_Applicant_Vacancys" Association="RecruitmentModel.FK_Applicant_Vacancys">
             <End Role="Vacancys" EntitySet="Vacancys" />
             <End Role="Applicant" EntitySet="Applicants" />
           </AssociationSet>
-          <AssociationSet Name="FK_Interviewer_Applicant" Association="RecruitmentModel.FK_Interviewer_Applicant">
-            <End Role="Applicant" EntitySet="Applicants" />
+          <AssociationSet Name="FK_Interviewer_Schedule" Association="RecruitmentModel.FK_Interviewer_Schedule">
+            <End Role="Schedule" EntitySet="Schedules" />
             <End Role="Interviewer" EntitySet="Interviewers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Vacancys" Association="RecruitmentModel.FK_Schedule_Vacancys">
+            <End Role="Vacancys" EntitySet="Vacancys" />
+            <End Role="Schedule" EntitySet="Schedules" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Admin">
@@ -128,6 +180,7 @@
           <Property Name="Admin_Account" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Admin_Password" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
           <Property Name="Admin_Status" Type="Boolean" />
+          <NavigationProperty Name="Schedules" Relationship="RecruitmentModel.FK_Schedule_Admin" FromRole="Admin" ToRole="Schedule" />
         </EntityType>
         <EntityType Name="Applicant">
           <Key>
@@ -143,21 +196,33 @@
           <Property Name="Applicant_IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Applicant_Desription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="Applicant_DateRegister" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Applicant_Admin_Accept" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Applicant_Client_Confirm" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="Vacancy" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Applicant" ToRole="Vacancys" />
-          <NavigationProperty Name="Interviewers" Relationship="RecruitmentModel.FK_Interviewer_Applicant" FromRole="Applicant" ToRole="Interviewer" />
         </EntityType>
         <EntityType Name="Interviewer">
           <Key>
             <PropertyRef Name="Interviewer_Id" />
           </Key>
           <Property Name="Interviewer_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Applicant_Id" Type="Int32" />
+          <Property Name="Schedule_Id" Type="Int32" />
           <Property Name="Interviewer_Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Interviewer_Result" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Interviewer_Date" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="Interviewer_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Interviewer_Note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Applicant" Relationship="RecruitmentModel.FK_Interviewer_Applicant" FromRole="Interviewer" ToRole="Applicant" />
+          <NavigationProperty Name="Schedule" Relationship="RecruitmentModel.FK_Interviewer_Schedule" FromRole="Interviewer" ToRole="Schedule" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Schedule_Id" />
+          </Key>
+          <Property Name="Schedule_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Schedule_Date" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Schedule_Time" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Vacancy_Id" Type="Int32" />
+          <Property Name="Admin_Id" Type="Int32" />
+          <NavigationProperty Name="Admin" Relationship="RecruitmentModel.FK_Schedule_Admin" FromRole="Schedule" ToRole="Admin" />
+          <NavigationProperty Name="Interviewers" Relationship="RecruitmentModel.FK_Interviewer_Schedule" FromRole="Schedule" ToRole="Interviewer" />
+          <NavigationProperty Name="Vacancy" Relationship="RecruitmentModel.FK_Schedule_Vacancys" FromRole="Schedule" ToRole="Vacancys" />
         </EntityType>
         <EntityType Name="Vacancy">
           <Key>
@@ -179,7 +244,20 @@
           <Property Name="Vacancy_DateUp" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Vacancy_Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Applicants" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Vacancys" ToRole="Applicant" />
+          <NavigationProperty Name="Schedules" Relationship="RecruitmentModel.FK_Schedule_Vacancys" FromRole="Vacancys" ToRole="Schedule" />
         </EntityType>
+        <Association Name="FK_Schedule_Admin">
+          <End Role="Admin" Type="RecruitmentModel.Admin" Multiplicity="0..1" />
+          <End Role="Schedule" Type="RecruitmentModel.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Admin_Id" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="Admin_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Applicant_Vacancys">
           <End Role="Vacancys" Type="RecruitmentModel.Vacancy" Multiplicity="0..1" />
           <End Role="Applicant" Type="RecruitmentModel.Applicant" Multiplicity="*" />
@@ -192,15 +270,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Interviewer_Applicant">
-          <End Role="Applicant" Type="RecruitmentModel.Applicant" Multiplicity="0..1" />
+        <Association Name="FK_Interviewer_Schedule">
+          <End Role="Schedule" Type="RecruitmentModel.Schedule" Multiplicity="0..1" />
           <End Role="Interviewer" Type="RecruitmentModel.Interviewer" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Applicant">
-              <PropertyRef Name="Applicant_Id" />
+            <Principal Role="Schedule">
+              <PropertyRef Name="Schedule_Id" />
             </Principal>
             <Dependent Role="Interviewer">
-              <PropertyRef Name="Applicant_Id" />
+              <PropertyRef Name="Schedule_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Vacancys">
+          <End Role="Vacancys" Type="RecruitmentModel.Vacancy" Multiplicity="0..1" />
+          <End Role="Schedule" Type="RecruitmentModel.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancys">
+              <PropertyRef Name="Vacancy_Id" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="Vacancy_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -234,6 +324,8 @@
                 <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
                 <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
                 <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
+                <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
+                <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -241,12 +333,21 @@
             <EntityTypeMapping TypeName="RecruitmentModel.Interviewer">
               <MappingFragment StoreEntitySet="Interviewer">
                 <ScalarProperty Name="Interviewer_Id" ColumnName="Interviewer_Id" />
-                <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+                <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
                 <ScalarProperty Name="Interviewer_Status" ColumnName="Interviewer_Status" />
                 <ScalarProperty Name="Interviewer_Result" ColumnName="Interviewer_Result" />
-                <ScalarProperty Name="Interviewer_Date" ColumnName="Interviewer_Date" />
-                <ScalarProperty Name="Interviewer_Time" ColumnName="Interviewer_Time" />
                 <ScalarProperty Name="Interviewer_Note" ColumnName="Interviewer_Note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="RecruitmentModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+                <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
+                <ScalarProperty Name="Schedule_Time" ColumnName="Schedule_Time" />
+                <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+                <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
