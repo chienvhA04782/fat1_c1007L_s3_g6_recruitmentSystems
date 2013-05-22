@@ -17,10 +17,10 @@ namespace Share
         public Vacancy()
         {
             this.Applicants = new HashSet<Applicant>();
-            this.Schedules = new HashSet<Schedule>();
         }
     
         public int Vacancy_Id { get; set; }
+        public Nullable<int> Schedule_Id { get; set; }
         public string Vacancy_Name { get; set; }
         public string Vacancy_WorkAddress { get; set; }
         public string Vacancy_TypeTime { get; set; }
@@ -34,9 +34,11 @@ namespace Share
         public string Vacancy_DateStart { get; set; }
         public string Vacancy_DateEnd { get; set; }
         public string Vacancy_DateUp { get; set; }
+        public string Vacancy_DateInterViewer { get; set; }
+        public string Vacancy_TimeInterViewer { get; set; }
         public string Vacancy_Status { get; set; }
     
         public virtual ICollection<Applicant> Applicants { get; set; }
-        public virtual ICollection<Schedule> Schedules { get; set; }
+        public virtual Schedule Schedule { get; set; }
     }
 }

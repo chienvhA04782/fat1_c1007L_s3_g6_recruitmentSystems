@@ -18,9 +18,9 @@
       <End Role="Admin" EntitySet="Admin" />
       <End Role="Schedule" EntitySet="Schedule" />
     </AssociationSet>
-    <AssociationSet Name="FK_Schedule_Vacancys" Association="RecruitmentModel.Store.FK_Schedule_Vacancys">
-      <End Role="Vacancys" EntitySet="Vacancys" />
+    <AssociationSet Name="FK_Vacancys_Schedule" Association="RecruitmentModel.Store.FK_Vacancys_Schedule">
       <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Vacancys" EntitySet="Vacancys" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Admin">
@@ -65,9 +65,8 @@
       <PropertyRef Name="Schedule_Id" />
     </Key>
     <Property Name="Schedule_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="DateTime_Create" Type="nchar" MaxLength="10" />
     <Property Name="Schedule_Date" Type="nvarchar" MaxLength="50" />
-    <Property Name="Schedule_Time" Type="nvarchar" MaxLength="50" />
-    <Property Name="Vacancy_Id" Type="int" />
     <Property Name="Admin_Id" Type="int" />
   </EntityType>
   <EntityType Name="Vacancys">
@@ -75,6 +74,7 @@
       <PropertyRef Name="Vacancy_Id" />
     </Key>
     <Property Name="Vacancy_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Schedule_Id" Type="int" />
     <Property Name="Vacancy_Name" Type="nvarchar" MaxLength="200" />
     <Property Name="Vacancy_WorkAddress" Type="nvarchar" MaxLength="200" />
     <Property Name="Vacancy_TypeTime" Type="nchar" MaxLength="10" />
@@ -88,6 +88,8 @@
     <Property Name="Vacancy_DateStart" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_DateEnd" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_DateUp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_DateInterViewer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vacancy_TimeInterViewer" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_Status" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <Association Name="FK_Applicant_Vacancys">
@@ -126,15 +128,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Schedule_Vacancys">
-    <End Role="Vacancys" Type="RecruitmentModel.Store.Vacancys" Multiplicity="0..1" />
-    <End Role="Schedule" Type="RecruitmentModel.Store.Schedule" Multiplicity="*" />
+  <Association Name="FK_Vacancys_Schedule">
+    <End Role="Schedule" Type="RecruitmentModel.Store.Schedule" Multiplicity="0..1" />
+    <End Role="Vacancys" Type="RecruitmentModel.Store.Vacancys" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Vacancys">
-        <PropertyRef Name="Vacancy_Id" />
+      <Principal Role="Schedule">
+        <PropertyRef Name="Schedule_Id" />
       </Principal>
-      <Dependent Role="Schedule">
-        <PropertyRef Name="Vacancy_Id" />
+      <Dependent Role="Vacancys">
+        <PropertyRef Name="Schedule_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

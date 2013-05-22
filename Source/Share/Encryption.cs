@@ -9,7 +9,7 @@ namespace Share
         public static string Md5Hash(string text)
         {
             MD5 md5 = new MD5CryptoServiceProvider();
-
+   
             //compute hash from the bytes of text
             md5.ComputeHash(Encoding.ASCII.GetBytes(text));
 

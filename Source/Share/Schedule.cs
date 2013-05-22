@@ -17,16 +17,16 @@ namespace Share
         public Schedule()
         {
             this.Interviewers = new HashSet<Interviewer>();
+            this.Vacancys = new HashSet<Vacancy>();
         }
     
         public int Schedule_Id { get; set; }
+        public string DateTime_Create { get; set; }
         public string Schedule_Date { get; set; }
-        public string Schedule_Time { get; set; }
-        public Nullable<int> Vacancy_Id { get; set; }
         public Nullable<int> Admin_Id { get; set; }
     
         public virtual Admin Admin { get; set; }
         public virtual ICollection<Interviewer> Interviewers { get; set; }
-        public virtual Vacancy Vacancy { get; set; }
+        public virtual ICollection<Vacancy> Vacancys { get; set; }
     }
 }

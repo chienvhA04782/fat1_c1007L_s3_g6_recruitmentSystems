@@ -37,3 +37,4 @@ E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitm
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.csprojResolveAssemblyReference.cache
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.pdb
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.Skins.dll

@@ -35,7 +35,7 @@
                                 <a href="#" class="vacancy" id="Vacancy">Vacancy</a>
                             </li>
                             <li>
-                                <a href="/Dashboard/Controls/Interviewer/Index.aspx" class="interviewer" id="Interviewer">Interviewer</a>
+                                <a href="/Dashboard/Controls/Schedule/Index.aspx" class="interviewer" id="Interviewer">Schedule Interviewer</a>
                             </li>
                         </ul>
                     </div>

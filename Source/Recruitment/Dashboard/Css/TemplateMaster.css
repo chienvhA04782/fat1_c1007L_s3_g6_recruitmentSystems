@@ -111,7 +111,7 @@ table.thNormal th {
     }
 
     .row-fluid .spanRight10 {
-        width: 78%;
+        width: 78% !important;
         margin-left: 160px !important;
         margin-top: 40px !important;
     }
@@ -129,6 +129,9 @@ table.thNormal th {
     .row-fluid span.title_navigator {
         padding-top: 20px;
         background: url("Icon/arrow.png") no-repeat scroll 10px -18px transparent;
+    }
+    .row-fluid .spanRight10 {
+        width: 99%;
     }
 }
 /* Landscape phones and down */
