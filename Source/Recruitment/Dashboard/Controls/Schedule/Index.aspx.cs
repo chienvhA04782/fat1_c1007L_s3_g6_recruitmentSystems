@@ -10,6 +10,7 @@ namespace Recruitment.Dashboard.Controls.Schedule
         private readonly Action.Schedule _schedule = new Action.Schedule();
         private readonly Vacancys _vacancys = new Vacancys();
         private readonly Admin _admin = new Admin();
+        protected int Count = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -55,6 +56,39 @@ namespace Recruitment.Dashboard.Controls.Schedule
         public string FetchUserNameAdminByAdminId(int adminId)
         {
             return _admin.FetchUserNameAdminByAdminId(adminId);
+        }
+
+        /// <summary>
+        /// Fetches the count done vavancys by shedule.
+        /// </summary>
+        /// <param name="scheduleId">The schedule id.</param>
+        /// <returns></returns>
+        public string FetchCountDoneVavancysByShedule(int scheduleId)
+        {
+            return "<span class='label label-success'>Done: " + _vacancys.FetchCountDoneVavancysByShedule(scheduleId) + "</span>";
+        }
+
+        /// <summary>
+        /// Fetches the count pending vacancys by schedule.
+        /// </summary>
+        /// <param name="scheduleId">The schedule id.</param>
+        /// <returns></returns>
+        public string FetchCountPendingVacancysBySchedule(int scheduleId)
+        {
+            return "<span class='label label-warning'>Pending: " + _vacancys.FetchCountPendingVacancysBySchedule(scheduleId) + "</span>";
+        }
+
+        /// <summary>
+        /// Fetches the result interviewer day by schedule.
+        /// </summary>
+        /// <returns></returns>
+        public string FetchResultInterviewerDayBySchedule(int scheduleId)
+        {
+            if (FetchCountScheduleByDateSchedule(scheduleId) == _vacancys.FetchCountDoneVavancysByShedule(scheduleId))
+            {
+                return "<span class='label label-info'>Finish" + "</span>";
+            }
+            return "<span class='label label-warning'>Not Finish" + "</span>";
         }
     }
 }

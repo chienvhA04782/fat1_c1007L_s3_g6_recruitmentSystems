@@ -72,7 +72,9 @@
     <Content Include="Dashboard\Controls\Interviewer\Index.aspx" />
     <Content Include="Dashboard\Controls\Interviewer\Update.ascx" />
     <Content Include="Dashboard\Controls\Schedule\Index.aspx" />
+    <Content Include="Dashboard\Controls\Schedule\ViewsVacancys.aspx" />
     <Content Include="Dashboard\Css\Icon\arrow.png" />
+    <Content Include="Dashboard\Css\Icon\banner-close-transparent.png" />
     <Content Include="Dashboard\Css\Icon\buttons.png" />
     <Content Include="Dashboard\Css\Icon\home.png" />
     <Content Include="Dashboard\Css\Icon\people.png" />
@@ -125,6 +127,13 @@
     </Compile>
     <Compile Include="Dashboard\Controls\Schedule\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Controls\Schedule\ViewsVacancys.aspx.cs">
+      <DependentUpon>ViewsVacancys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controls\Schedule\ViewsVacancys.aspx.designer.cs">
+      <DependentUpon>ViewsVacancys.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

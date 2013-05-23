@@ -16,8 +16,9 @@
         }
 
         .Schedule_Tooltip {
-            background: none repeat scroll 0 0 #FFFFFF;
-            border: 1px solid #404040;
+            /*background: none repeat scroll 0 0 #FFFFFF;
+            border: 1px solid #d1d0d1;
+            border-radius: 5px 5px 5px 5px;
             -webkit-box-shadow: 10px 10px 5px #756f6f;
             box-shadow: 10px 10px 5px #756f6f;
             font-size: 13px;
@@ -25,22 +26,34 @@
             margin-left: 30px;
             padding-bottom: 15px;
             padding-left: 10px;
-            padding-top: 15px;
+            padding-top: 15px;*/
             position: absolute;
             display: none;
+            border: 1px solid #CCCCCC;
+            border-radius: 5px 5px 5px 5px;
+            color: #707070;
+            padding: 15px;
             z-index: 2;
+            background: #fdfdfd;
+            margin-left: 80px;
         }
 
             .Schedule_Tooltip span.close {
-                color: #DC2606 !important;
+                background: url("../../Css/Icon/top-bar-icons.png") no-repeat scroll 0 0px transparent;
+                color: #A2A2A2 !important;
+                height: 17px;
+                margin-right: 6px;
+                margin-top: 6px;
                 opacity: 1;
-                padding-left: 10px;
-                padding-right: 1px;
                 position: absolute;
                 right: -4px;
-                top: -12px;
-                width: 10px;
+                top: -4px;
+                width: 20px;
             }
+
+                .Schedule_Tooltip span.close:hover {
+                    background: url("../../Css/Icon/top-bar-icons.png") no-repeat scroll 0 -140px transparent;
+                }
 
         ul.vacancys_ul {
             min-width: 300px;
@@ -54,7 +67,6 @@
             }
 
                 ul.vacancys_ul li a {
-                    border-bottom: 1px solid #D1D0D1;
                     display: block;
                     padding-bottom: 15px;
                 }
@@ -80,6 +92,9 @@
             <Columns>
                 <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="#" UniqueName="TemplateColumn">
                     <ItemStyle Width="50px" />
+                    <ItemTemplate>
+                        <%=Count++ %>
+                    </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridTemplateColumn HeaderText="Schedule Date" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
                     <ItemTemplate>
@@ -91,15 +106,24 @@
                         <a class="vacancys" href="#" style="padding-left: 10px; padding-right: 10px"
                             onclick="DisplayTooltip(<%#Eval("Schedule_Id")%>)">
                             <span class="label label-info"><%#FetchCountScheduleByDateSchedule(Convert.ToInt32(Eval("Schedule_Id")))%></span>
-                            [Status]
+                            <%-- Done Status--%>
+                            [<%#FetchCountDoneVavancysByShedule(Convert.ToInt32(Eval("Schedule_Id")))%>
+                            <%-- Pending Status--%>
+                            <%#FetchCountPendingVacancysBySchedule(Convert.ToInt32(Eval("Schedule_Id")))%>]
                         </a>
                         <div class="Schedule_Tooltip Container-<%#Eval("Schedule_Id")%>">
-                            <span class="close" onclick="$('.Schedule_Tooltip').hide();" title="Close this box">x</span>
+                            <span class="close" onclick="$('.Schedule_Tooltip').hide();" title="Close this box"></span>
                             <ul class="vacancys_ul">
                                 <%#FetchNameVacancysByScheduleId(Convert.ToInt32(Eval("Schedule_Id")))%>
                             </ul>
                         </div>
-                        <telerik:RadButton ID="RadButton1" runat="server" Text="View"></telerik:RadButton>
+                        <a class="btn" href="ViewsVacancys.aspx?ViewsId=<%#Eval("Schedule_Id")%>">View</a>
+                    </ItemTemplate>
+                </telerik:GridTemplateColumn>
+                <telerik:GridTemplateColumn HeaderText="Result" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
+                    <ItemTemplate>
+                        <%--Result status--%>
+                        <%#FetchResultInterviewerDayBySchedule(Convert.ToInt32(Eval("Schedule_Id"))) %>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridTemplateColumn HeaderText="Author" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
@@ -107,13 +131,12 @@
                         <%#FetchUserNameAdminByAdminId(Convert.ToInt32(Eval("Admin_Id"))) %>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
-                  <telerik:GridTemplateColumn HeaderText="Date/Time Create" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
+                <telerik:GridTemplateColumn HeaderText="Date/Time Create" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
                     <ItemTemplate>
                         <%#Eval("DateTime_Create") %>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
             </Columns>
-
             <EditFormSettings>
                 <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
             </EditFormSettings>

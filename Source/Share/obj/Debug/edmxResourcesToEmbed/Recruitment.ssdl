@@ -65,7 +65,7 @@
       <PropertyRef Name="Schedule_Id" />
     </Key>
     <Property Name="Schedule_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="DateTime_Create" Type="nchar" MaxLength="10" />
+    <Property Name="DateTime_Create" Type="nvarchar" MaxLength="50" />
     <Property Name="Schedule_Date" Type="nvarchar" MaxLength="50" />
     <Property Name="Admin_Id" Type="int" />
   </EntityType>

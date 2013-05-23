@@ -105,7 +105,7 @@
       <PropertyRef Name="Schedule_Id" />
     </Key>
     <Property Type="Int32" Name="Schedule_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="DateTime_Create" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="DateTime_Create" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="Schedule_Date" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="Admin_Id" />
     <NavigationProperty Name="Admin" Relationship="RecruitmentModel.FK_Schedule_Admin" FromRole="Schedule" ToRole="Admin" />
