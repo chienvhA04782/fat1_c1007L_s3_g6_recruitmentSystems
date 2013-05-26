@@ -191,5 +191,23 @@ namespace Action
                 return false;
             }
         }
+
+        /// <summary>
+        /// Fetches all list vancancys.
+        /// </summary>
+        /// <returns></returns>
+        public List<Share.Vacancy> FetchAllListVancancys()
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return (from c in db.Vacancys select c).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
     }
 }

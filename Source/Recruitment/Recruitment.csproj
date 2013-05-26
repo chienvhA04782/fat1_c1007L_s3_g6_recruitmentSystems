@@ -69,10 +69,54 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\images\blue-arr.png" />
+    <Content Include="Css\images\blue-btn.png" />
+    <Content Include="Css\images\body-pattern.png" />
+    <Content Include="Css\images\border-title.png" />
+    <Content Include="Css\images\bullet.png" />
+    <Content Include="Css\images\col-img.png" />
+    <Content Include="Css\images\col-img2.png" />
+    <Content Include="Css\images\container-mobile.png" />
+    <Content Include="Css\images\container-tablet.png" />
+    <Content Include="Css\images\container.png" />
+    <Content Include="Css\images\date-ico.png" />
+    <Content Include="Css\images\dd-nav-arrs%402x.png" />
+    <Content Include="Css\images\dd-nav-arrs.png" />
+    <Content Include="Css\images\entries-tablet.png" />
+    <Content Include="Css\images\entries.png" />
+    <Content Include="Css\images\entry-title.png" />
+    <Content Include="Css\images\favicon.ico" />
+    <Content Include="Css\images\footer-border.png" />
+    <Content Include="Css\images\left-arr.png" />
+    <Content Include="Css\images\logo%402x.png" />
+    <Content Include="Css\images\logo.png" />
+    <Content Include="Css\images\mac-img.png" />
+    <Content Include="Css\images\mobile-bg.jpg" />
+    <Content Include="Css\images\nav-btn.png" />
+    <Content Include="Css\images\navigation%402x.png" />
+    <Content Include="Css\images\navigation.png" />
+    <Content Include="Css\images\partners-img.png" />
+    <Content Include="Css\images\right-arr.png" />
+    <Content Include="Css\images\search-ico.png" />
+    <Content Include="Css\images\slider-arr%402x.png" />
+    <Content Include="Css\images\slider-arr.png" />
+    <Content Include="Css\images\slider-bg.jpg" />
+    <Content Include="Css\images\slider-mobile%402x.png" />
+    <Content Include="Css\images\slider-mobile.png" />
+    <Content Include="Css\images\slider-tablet.png" />
+    <Content Include="Css\images\socials.png" />
+    <Content Include="Css\images\tablet-bg.jpg" />
+    <Content Include="Css\images\thumb.png" />
+    <Content Include="Css\images\thumb2.png" />
+    <Content Include="Css\images\thumb3.png" />
+    <Content Include="Css\images\thumb4.png" />
+    <Content Include="Css\preview.css" />
+    <Content Include="Css\style.css" />
     <Content Include="Dashboard\Controls\Interviewer\Index.aspx" />
     <Content Include="Dashboard\Controls\Interviewer\Update.ascx" />
     <Content Include="Dashboard\Controls\Schedule\Index.aspx" />
     <Content Include="Dashboard\Controls\Schedule\Vacancys.aspx" />
+    <Content Include="Dashboard\Controls\Vacancy\Index.aspx" />
     <Content Include="Dashboard\Css\Icon\arrow.png" />
     <Content Include="Dashboard\Css\Icon\banner-close-transparent.png" />
     <Content Include="Dashboard\Css\Icon\buttons.png" />
@@ -84,6 +128,11 @@
     <Content Include="Dashboard\Css\TemplateMaster.css" />
     <Content Include="Dashboard\Index.aspx" />
     <Content Include="Dashboard\JavaScript\Application.js" />
+    <Content Include="Index.aspx" />
+    <Content Include="JavaScript\functions.js" />
+    <Content Include="JavaScript\jquery-1.8.0.min.js" />
+    <Content Include="JavaScript\jquery.carouFredSel-5.5.0-packed.js" />
+    <Content Include="JavaScript\modernizr.custom.js" />
     <Content Include="Login.aspx" />
     <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.min.css" />
@@ -135,6 +184,13 @@
     <Compile Include="Dashboard\Controls\Schedule\Vacancys.aspx.designer.cs">
       <DependentUpon>Vacancys.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Controls\Vacancy\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Controls\Vacancy\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +204,13 @@
     </Compile>
     <Compile Include="Dashboard\Index.Master.designer.cs">
       <DependentUpon>Index.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.Master.cs">
       <DependentUpon>Index.Master</DependentUpon>
@@ -180,6 +243,7 @@
     <Content Include="Plugin\FontFamily\Helvetical\Thin\50d35bbc-dfd4-48f1-af16-cf058f69421d.woff" />
     <Content Include="Plugin\FontFamily\Helvetical\Thin\56be84de-9d60-4089-8df0-0ea6ec786b84.eot" />
     <Content Include="Dashboard\Index.Master" />
+    <Content Include="Css\images\thumb4.png - Shortcut.lnk" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -187,10 +251,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Css\" />
-    <Folder Include="JavaScript\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Action\Action.csproj">
       <Project>{02ea4685-33ac-4147-9cdb-ff88863be22f}</Project>
