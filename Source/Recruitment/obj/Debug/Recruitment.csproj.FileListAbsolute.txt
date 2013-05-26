@@ -29,6 +29,7 @@ E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitm
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Action.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Share.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.dll
+E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.Skins.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\EntityFramework.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Action.pdb
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Share.pdb
@@ -37,4 +38,3 @@ E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitm
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.csprojResolveAssemblyReference.cache
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.pdb
-E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.Skins.dll

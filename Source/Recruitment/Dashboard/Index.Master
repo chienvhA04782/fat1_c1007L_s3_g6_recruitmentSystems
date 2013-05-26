@@ -1,4 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Index.master.cs" Inherits="Recruitment.Dashboard.Index1" %>
+
 <!DOCTYPE html>
 
 <html>
@@ -15,7 +16,8 @@
 </head>
 <body>
     <form id="frmDashBoard" runat="server">
-        <telerik:RadScriptManager ID="RadScriptMngDashboard" runat="server"></telerik:RadScriptManager>
+        <asp:ScriptManager ID="ScriptManager_dashboard" runat="server"></asp:ScriptManager>
+       
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12 topbarFix">

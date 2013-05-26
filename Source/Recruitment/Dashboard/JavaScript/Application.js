@@ -17,3 +17,21 @@ $(function () {
         $.session.set('menuActive', this.id);
     });
 });
+
+function ViewDetailsVacancysInInterViewer() {
+    $('body').append('<div id="mask"></div>');
+}
+
+function ViewApplicantInInterViewer() {
+    $('body').append('<div id="mask"></div>');
+}
+
+function CloseDetailsVacancysInInterverer() {
+    $('#Panel_DetailsVacancys').hide();
+    $('#mask').remove();
+}
+
+function CloseViewApplicantInInterviewer() {
+    $('#PnlViewUpdateApplicant').hide();
+    $('#mask').remove();
+}

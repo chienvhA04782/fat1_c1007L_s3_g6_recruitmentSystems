@@ -26,9 +26,9 @@ namespace Share
         }
     
         public DbSet<Admin> Admins { get; set; }
-        public DbSet<Applicant> Applicants { get; set; }
         public DbSet<Interviewer> Interviewers { get; set; }
         public DbSet<Vacancy> Vacancys { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Applicant> Applicants { get; set; }
     }
 }

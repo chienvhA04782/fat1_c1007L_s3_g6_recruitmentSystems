@@ -6,14 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="59d6b574e3664d778df50aae0129702a" Name="Diagram1">
         <EntityTypeShape EntityType="RecruitmentModel.Admin" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.Applicant" Width="1.5" PointX="3.125" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="RecruitmentModel.Interviewer" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RecruitmentModel.Vacancy" Width="1.5" PointX="11.681729480475992" PointY="28.711633606213905" />
-        <AssociationConnector Association="RecruitmentModel.FK_Applicant_Vacancys" />
+        <EntityTypeShape EntityType="RecruitmentModel.Vacancy" Width="1.5" PointX="8.375" PointY="24.625" />
         <EntityTypeShape EntityType="RecruitmentModel.Schedule" Width="1.5" PointX="10.815534179478666" PointY="0.47944177709493868" />
         <AssociationConnector Association="RecruitmentModel.FK_Schedule_Admin" />
         <AssociationConnector Association="RecruitmentModel.FK_Interviewer_Schedule" />
         <AssociationConnector Association="RecruitmentModel.FK_Vacancys_Schedule" />
+        <EntityTypeShape EntityType="RecruitmentModel.Applicant" Width="1.5" PointX="0.13154913118646905" PointY="16.679256402272383" />
+        <AssociationConnector Association="RecruitmentModel.FK_Applicant_Vacancys" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

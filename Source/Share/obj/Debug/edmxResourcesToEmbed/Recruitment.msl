@@ -12,24 +12,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Applicants">
-      <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
-        <MappingFragment StoreEntitySet="Applicant">
-          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
-          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
-          <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
-          <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
-          <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
-          <ScalarProperty Name="Applicant_CVPath" ColumnName="Applicant_CVPath" />
-          <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
-          <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
-          <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
-          <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
-          <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
-          <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Interviewers">
       <EntityTypeMapping TypeName="RecruitmentModel.Interviewer">
         <MappingFragment StoreEntitySet="Interviewer">
@@ -44,6 +26,7 @@
     <EntitySetMapping Name="Vacancys">
       <EntityTypeMapping TypeName="RecruitmentModel.Vacancy">
         <MappingFragment StoreEntitySet="Vacancys">
+          <ScalarProperty Name="Vacancy_Skill" ColumnName="Vacancy_Skill" />
           <ScalarProperty Name="Vacancy_Status" ColumnName="Vacancy_Status" />
           <ScalarProperty Name="Vacancy_TimeInterViewer" ColumnName="Vacancy_TimeInterViewer" />
           <ScalarProperty Name="Vacancy_DateInterViewer" ColumnName="Vacancy_DateInterViewer" />
@@ -72,6 +55,25 @@
           <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
           <ScalarProperty Name="DateTime_Create" ColumnName="DateTime_Create" />
           <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applicants">
+      <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
+        <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
+          <ScalarProperty Name="Applicant_Result" ColumnName="Applicant_Result" />
+          <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
+          <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
+          <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
+          <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
+          <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
+          <ScalarProperty Name="Applicant_CVPath" ColumnName="Applicant_CVPath" />
+          <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
+          <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
+          <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
+          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

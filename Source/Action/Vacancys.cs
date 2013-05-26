@@ -80,7 +80,7 @@ namespace Action
             {
                 var db = new Share.RecruitmentEntities();
                 return
-                    (from c in db.Vacancys where c.Schedule_Id == scheduleId & c.Vacancy_Status == "Pending" select c)
+                    (from c in db.Vacancys where c.Schedule_Id == scheduleId & c.Vacancy_Status == "Waiting" select c)
                         .Count();
             }
             catch (Exception e)
@@ -126,6 +126,69 @@ namespace Action
             {
                 Console.Write(e);
                 return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the vacancy details by vacancys id.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
+        public static List<Share.Vacancy> FetchVacancyDetailsByVacancysId(int id)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                List<Share.Vacancy> vacancysDetails =
+                    (from c in db.Vacancys where c.Vacancy_Id == id select c).ToList();
+                return vacancysDetails;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the date schedule by schedule id.
+        /// </summary>
+        /// <param name="scheduleId">The schedule id.</param>
+        /// <returns></returns>
+        public string FetchDateScheduleByScheduleId(int scheduleId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return
+                    (from c in db.Schedules where c.Schedule_Id == scheduleId select c.Schedule_Date).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return string.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Updates the vacancys status by vacancsy id.
+        /// </summary>
+        /// <returns></returns>
+        public bool UpdateVacancysStatusByVacancsyId(int cacancysId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                Share.Vacancy vacancys =
+                    (from c in db.Vacancys where c.Vacancy_Id == cacancysId select c).FirstOrDefault();
+                if (vacancys != null) vacancys.Vacancy_Status = "Done";
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return false;
             }
         }
     }

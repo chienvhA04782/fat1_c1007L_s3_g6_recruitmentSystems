@@ -48,6 +48,7 @@
     <Property Name="Applicant_Desription" Type="ntext" />
     <Property Name="Applicant_DateRegister" Type="nvarchar" MaxLength="50" />
     <Property Name="Applicant_Admin_Accept" Type="nchar" MaxLength="10" />
+    <Property Name="Applicant_Result" Type="nchar" MaxLength="10" />
     <Property Name="Applicant_Client_Confirm" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="Interviewer">
@@ -81,6 +82,7 @@
     <Property Name="Vacancy_Salary" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_Positions" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_NumberPeople" Type="int" />
+    <Property Name="Vacancy_Skill" Type="nvarchar" MaxLength="200" />
     <Property Name="Vacancy_Exp" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_Gender" Type="nvarchar" MaxLength="50" />
     <Property Name="Vacancy_Age" Type="nvarchar" MaxLength="50" />

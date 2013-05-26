@@ -14,9 +14,37 @@ namespace Action
         /// <returns></returns>
         public List<Share.Schedule> FetchListSchedule()
         {
-            var db = new Share.RecruitmentEntities();
-            List<Share.Schedule> listSchedule = (from c in db.Schedules select c).ToList();
-            return listSchedule;
-        } 
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                List<Share.Schedule> listSchedule = (from c in db.Schedules select c).ToList();
+                return listSchedule;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the date schedule by schedule id.
+        /// </summary>
+        /// <param name="scheduleId">The schedule id.</param>
+        /// <returns></returns>
+        public String FetchDateScheduleByScheduleId(int scheduleId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return
+                    (from c in db.Schedules where c.Schedule_Id == scheduleId select c.Schedule_Date).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return string.Empty;
+            }
+        }
     }
 }

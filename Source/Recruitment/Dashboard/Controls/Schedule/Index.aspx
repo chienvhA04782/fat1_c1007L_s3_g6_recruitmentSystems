@@ -117,7 +117,7 @@
                                 <%#FetchNameVacancysByScheduleId(Convert.ToInt32(Eval("Schedule_Id")))%>
                             </ul>
                         </div>
-                        <a class="btn" href="ViewsVacancys.aspx?ViewsId=<%#Eval("Schedule_Id")%>">View</a>
+                        <a class="btn" href="Vacancys.aspx?ViewsId=<%#Eval("Schedule_Id")%>">View</a>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
                 <telerik:GridTemplateColumn HeaderText="Result" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
@@ -140,15 +140,10 @@
             <EditFormSettings>
                 <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
             </EditFormSettings>
-
             <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
         </MasterTableView>
-
         <HeaderStyle Font-Bold="False" />
-
         <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
-
         <FilterMenu EnableImageSprites="False"></FilterMenu>
-
     </telerik:RadGrid>
 </asp:Content>

@@ -25,6 +25,7 @@ namespace Share
         public string Applicant_Desription { get; set; }
         public string Applicant_DateRegister { get; set; }
         public string Applicant_Admin_Accept { get; set; }
+        public string Applicant_Result { get; set; }
         public string Applicant_Client_Confirm { get; set; }
     
         public virtual Vacancy Vacancy { get; set; }
