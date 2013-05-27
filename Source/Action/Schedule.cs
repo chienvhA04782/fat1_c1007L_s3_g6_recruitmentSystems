@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Share;
 
 namespace Action
@@ -16,7 +15,7 @@ namespace Action
         {
             try
             {
-                var db = new Share.RecruitmentEntities();
+                var db = new RecruitmentEntities();
                 List<Share.Schedule> listSchedule = (from c in db.Schedules select c).ToList();
                 return listSchedule;
             }
@@ -36,7 +35,7 @@ namespace Action
         {
             try
             {
-                var db = new Share.RecruitmentEntities();
+                var db = new RecruitmentEntities();
                 return
                     (from c in db.Schedules where c.Schedule_Id == scheduleId select c.Schedule_Date).FirstOrDefault();
             }

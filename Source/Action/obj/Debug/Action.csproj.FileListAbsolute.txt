@@ -25,3 +25,12 @@ E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\b
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.csprojResolveAssemblyReference.cache
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.dll
 E:\FPT-Aptech\ProjectSemIII\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.pdb
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Action.dll
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Action.pdb
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\EntityFramework.dll
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Share.dll
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\Share.pdb
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\bin\Debug\EntityFramework.xml
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.csprojResolveAssemblyReference.cache
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.dll
+H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Action\obj\Debug\Action.pdb

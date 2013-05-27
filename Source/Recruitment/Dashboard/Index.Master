@@ -10,14 +10,16 @@
     <link href="/Plugin/Bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="/Dashboard/Css/TemplateMaster.css" rel="stylesheet" />
     <script src="/Plugin/jquery-2.0.0.min.js"></script>
+
     <script src="/Plugin/jquery.session.js"></script>
+    <script src="/Plugin/Bootstrap/js/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="frmDashBoard" runat="server">
         <asp:ScriptManager ID="ScriptManager_dashboard" runat="server"></asp:ScriptManager>
-       
+
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12 topbarFix">

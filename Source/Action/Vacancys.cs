@@ -201,12 +201,30 @@ namespace Action
             try
             {
                 var db = new Share.RecruitmentEntities();
-                return (from c in db.Vacancys select c).ToList();
+                return (from c in db.Vacancys orderby c.Vacancy_Id descending select c ).ToList();
             }
             catch (Exception e)
             {
                 Console.Write(e);
                 return null;
+            }
+        }
+
+        /// <summary>
+        /// Creates the new vacancys.
+        /// </summary>
+        /// <param name="vacancys">The vacancys.</param>
+        public void CreateNewVacancys(Share.Vacancy vacancys)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                db.Vacancys.Add(vacancys);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
             }
         }
     }

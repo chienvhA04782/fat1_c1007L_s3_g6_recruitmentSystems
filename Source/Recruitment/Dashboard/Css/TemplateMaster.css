@@ -291,7 +291,7 @@ div h3.titleModule {
             width: 15px;
         }
 
-.inputs {
+input,textarea {
     -moz-box-sizing: border-box !important;
     -webkit-box-sizing: border-box !important;
     box-sizing: border-box !important;
@@ -302,13 +302,15 @@ div h3.titleModule {
     box-shadow: 0 1px 1px 0 #000000 inset !important;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset !important;
     font-size: 1em !important;
-    height: 1.6em !important;
+    min-height: 1.8em !important;
     line-height: 1.1em !important;
     margin: 0 0 5px !important;
     padding: 0 3px !important;
     width: 100%;
 }
-
+.requiment {
+    color: #dc2606;
+}
 .boxApplicantUpdate {
     width: 100%;
     padding-top: 10px;

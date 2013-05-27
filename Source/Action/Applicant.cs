@@ -59,7 +59,7 @@ namespace Action
         {
             try
             {
-                var db = new Share.RecruitmentEntities();
+                var db = new RecruitmentEntities();
                 Share.Applicant applicant =
                     (from c in db.Applicants where c.Applicant_Id == applicantId select c).FirstOrDefault();
                 switch (result.Trim())
