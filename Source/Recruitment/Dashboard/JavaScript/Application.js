@@ -26,8 +26,8 @@ function ViewApplicantInInterViewer() {
     $('body').append('<div id="mask"></div>');
 }
 
-function maskBodyMaster() {
-    $('body').append('<div id="mask"></div>');
+function AddNewVacancys() {
+    $('#Panel_ContentAddnew').show();
     return true;
 }
 function CloseDetailsVacancysInInterverer() {
@@ -51,13 +51,13 @@ function validateAddnewVacancys() {
     $('input#txtsalary').css('background-color', '#fff');
     $('input#txtposition').css('background-color', '#fff');
     $('input#txtnumberpeople').css('background-color', '#fff');
-    
+
     $('input#txtName').css('color', '#555555');
     $('input#txtAddress').css('color', '#555555');
     $('input#txtsalary').css('color', '#555555');
     $('input#txtposition').css('color', '#555555');
     $('input#txtnumberpeople').css('color', '#555555');
-    
+
     if ($('input.rdDate_Start').val() == "") {
         $('input.rdDate_Start').css('color', '#fff');
         $('input.rdDate_Start').css('background-color', '#dc2606');

@@ -22,6 +22,15 @@ namespace Recruitment.Dashboard.Controls.Vacancy {
         protected global::System.Web.UI.UpdatePanel upnVacancyBarTop;
         
         /// <summary>
+        /// Ltr_action control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal Ltr_action;
+        
+        /// <summary>
         /// lbtn_Addnew control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Recruitment.Dashboard.Controls.Vacancy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtn_Addnew;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// RadGridListVacancys control.

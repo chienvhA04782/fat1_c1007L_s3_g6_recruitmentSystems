@@ -49,10 +49,11 @@ namespace Recruitment.Dashboard.Controls.Vacancy
                     Vacancy_DateEnd = rdDate_End.SelectedDate.ToString()
                 };
             // create
-            _vacancy.CreateNewVacancys(vacancys);
             Panel_ContentAddnew.Visible = false;
+            _vacancy.CreateNewVacancys(vacancys);
             // reaload datasource
             FetchAllListVancancys();
+            Ltr_action.Text = "<script>CloseAddnewVacancys();" + "</script>";
         }
 
         /// <summary>

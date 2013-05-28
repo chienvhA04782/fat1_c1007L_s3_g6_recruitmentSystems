@@ -3,76 +3,92 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+  
     <h3>Vacancys</h3>
     <asp:UpdatePanel ID="upnVacancyBarTop" runat="server">
         <ContentTemplate>
+              <asp:Literal ID="Ltr_action" runat="server"></asp:Literal>
             <div style="margin-bottom: 10px">
                 <asp:LinkButton ID="lbtn_Addnew" runat="server" OnClick="lbtn_Addnew_Click"
-                    CssClass="btn" OnClientClick="return maskBodyMaster();">Add New</asp:LinkButton>
+                    CssClass="btn" OnClientClick="return AddNewVacancys();">Add New</asp:LinkButton>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
-    <telerik:RadGrid ID="RadGridListVacancys" runat="server" AutoGenerateColumns="False">
-        <MasterTableView>
-            <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
-            <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
-                <HeaderStyle Width="20px"></HeaderStyle>
-            </RowIndicatorColumn>
-            <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
-                <HeaderStyle Width="20px"></HeaderStyle>
-            </ExpandCollapseColumn>
-            <Columns>
-                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="#" UniqueName="TemplateColumn">
-                    <ItemTemplate>
-                        <%=Count++ %>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Name">
-                    <ItemTemplate>
-                        <%#Eval("Vacancy_Name")%>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Type">
-                    <ItemTemplate>
-                        <%#Eval("Vacancy_TypeTime")%>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Address">
-                    <ItemTemplate>
-                        <%#Eval("Vacancy_WorkAddress")%>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Applicant">
-                    <ItemTemplate>
-                        <span class="label label-success">3</span>
-                        <span class="label label-warning">10</span>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Action">
-                    <ItemTemplate>
-                        <div class="btn-group">
-                            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                Action
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <telerik:RadGrid ID="RadGridListVacancys" runat="server" AutoGenerateColumns="False">
+                <MasterTableView>
+                    <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
+                    <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
+                        <HeaderStyle Width="20px"></HeaderStyle>
+                    </RowIndicatorColumn>
+                    <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
+                        <HeaderStyle Width="20px"></HeaderStyle>
+                    </ExpandCollapseColumn>
+                    <Columns>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="#" UniqueName="TemplateColumn">
+                            <ItemTemplate>
+                                <%=Count++ %>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Name">
+                            <ItemTemplate>
+                                <%#Eval("Vacancy_Name")%>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Type">
+                            <ItemTemplate>
+                                <%#Eval("Vacancy_TypeTime")%>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Address">
+                            <ItemTemplate>
+                                <%#Eval("Vacancy_WorkAddress")%>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date Start">
+                            <ItemTemplate>
+                                <%#Eval("Vacancy_DateStart")%>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date End">
+                            <ItemTemplate>
+                                <%#Eval("Vacancy_DateEnd")%>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Applicant">
+                            <ItemTemplate>
+                                <span class="label label-success">3</span>
+                                <span class="label label-warning">10</span>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Action">
+                            <ItemTemplate>
+                                <div class="btn-group">
+                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                                        Action
                                 <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Interviewer this vacancys</a></li>
-                                <li><a href="#">Attach new applicant</a></li>
-                                <li><a href="#">Edit</a></li>
-                                <li><a href="#">Remove</a></li>
-                            </ul>
-                        </div>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
-            </Columns>
-            <EditFormSettings>
-                <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
-            </EditFormSettings>
-            <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
-        </MasterTableView>
-        <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
-        <FilterMenu EnableImageSprites="False"></FilterMenu>
-    </telerik:RadGrid>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Interviewer this vacancys</a></li>
+                                        <li><a href="#">Attach new applicant</a></li>
+                                        <li><a href="#">Edit</a></li>
+                                        <li><a href="#">Remove</a></li>
+                                    </ul>
+                                </div>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                    </Columns>
+                    <EditFormSettings>
+                        <EditColumn FilterControlAltText="Filter EditCommandColumn column"></EditColumn>
+                    </EditFormSettings>
+                    <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
+                </MasterTableView>
+                <PagerStyle PageSizeControlType="RadComboBox"></PagerStyle>
+                <FilterMenu EnableImageSprites="False"></FilterMenu>
+            </telerik:RadGrid>
+        </ContentTemplate>
+    </asp:UpdatePanel>
     <%--Add new--%>
     <asp:UpdatePanel ID="upnContenAddnew" runat="server">
         <ContentTemplate>
