@@ -227,5 +227,33 @@ namespace Action
                 Console.Write(e);
             }
         }
+
+        /// <summary>
+        /// Fetches the schedule id by vacancys id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public int FetchScheduleIdByVacancysId(int vacancysId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                Share.Vacancy vacancy =  (from c in db.Vacancys where c.Vacancy_Id == vacancysId select c).FirstOrDefault();
+                if (vacancy != null)
+                {
+                    if (vacancy.Schedule_Id != null)
+                    {
+                        return (int) vacancy.Schedule_Id;
+                    }
+                    return 0;
+                }
+                return 0;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return 0;
+            }
+        }
     }
 }

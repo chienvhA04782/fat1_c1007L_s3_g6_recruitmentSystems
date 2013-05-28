@@ -65,5 +65,28 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         {
             Panel_ContentAddnew.Visible = true;
         }
+
+        /// <summary>
+        /// Fetches the schedule id by vacancys id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public int FetchScheduleIdByVacancysId(int vacancysId)
+        {
+            return _vacancy.FetchScheduleIdByVacancysId(vacancysId);
+        }
+
+        /// <summary>
+        /// Filters the vacancys by schedule.
+        /// </summary>
+        /// <returns></returns>
+        public string FilterVacancysBySchedule(int vacancyId)
+        {
+            if (FetchScheduleIdByVacancysId(vacancyId) == 0)
+            {
+                return "";
+            }
+            return "";
+        }
     }
 }

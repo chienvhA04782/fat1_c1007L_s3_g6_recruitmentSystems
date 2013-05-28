@@ -3,11 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  
+
     <h3>Vacancys</h3>
     <asp:UpdatePanel ID="upnVacancyBarTop" runat="server">
         <ContentTemplate>
-              <asp:Literal ID="Ltr_action" runat="server"></asp:Literal>
+            <asp:Literal ID="Ltr_action" runat="server"></asp:Literal>
             <div style="margin-bottom: 10px">
                 <asp:LinkButton ID="lbtn_Addnew" runat="server" OnClick="lbtn_Addnew_Click"
                     CssClass="btn" OnClientClick="return AddNewVacancys();">Add New</asp:LinkButton>
@@ -58,8 +58,9 @@
                         </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Applicant">
                             <ItemTemplate>
-                                <span class="label label-success">3</span>
-                                <span class="label label-warning">10</span>
+                                <%--   <span class="label label-success">3</span>
+                                <span class="label label-warning">10</span>--%>
+                                <%#FilterVacancysBySchedule(Convert.ToInt32(Eval("Vacancy_Id"))) %>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Action">
