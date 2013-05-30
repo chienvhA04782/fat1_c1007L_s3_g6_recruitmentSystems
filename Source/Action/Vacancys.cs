@@ -201,7 +201,7 @@ namespace Action
             try
             {
                 var db = new Share.RecruitmentEntities();
-                return (from c in db.Vacancys orderby c.Vacancy_Id descending select c ).ToList();
+                return (from c in db.Vacancys orderby c.Vacancy_Id descending select c).ToList();
             }
             catch (Exception e)
             {
@@ -238,12 +238,12 @@ namespace Action
             try
             {
                 var db = new Share.RecruitmentEntities();
-                Share.Vacancy vacancy =  (from c in db.Vacancys where c.Vacancy_Id == vacancysId select c).FirstOrDefault();
+                Share.Vacancy vacancy = (from c in db.Vacancys where c.Vacancy_Id == vacancysId select c).FirstOrDefault();
                 if (vacancy != null)
                 {
                     if (vacancy.Schedule_Id != null)
                     {
-                        return (int) vacancy.Schedule_Id;
+                        return (int)vacancy.Schedule_Id;
                     }
                     return 0;
                 }

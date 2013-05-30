@@ -36,6 +36,13 @@
                                 <%#Eval("Vacancy_Name")%>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Applicant">
+                            <ItemTemplate>
+                                <%--   <span class="label label-success">3</span>
+                                <span class="label label-warning">10</span>--%>
+                                <%#FilterVacancysBySchedule(Convert.ToInt32(Eval("Vacancy_Id"))) %>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Type">
                             <ItemTemplate>
                                 <%#Eval("Vacancy_TypeTime")%>
@@ -56,13 +63,6 @@
                                 <%#Eval("Vacancy_DateEnd")%>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
-                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Applicant">
-                            <ItemTemplate>
-                                <%--   <span class="label label-success">3</span>
-                                <span class="label label-warning">10</span>--%>
-                                <%#FilterVacancysBySchedule(Convert.ToInt32(Eval("Vacancy_Id"))) %>
-                            </ItemTemplate>
-                        </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Action">
                             <ItemTemplate>
                                 <div class="btn-group">
@@ -71,8 +71,7 @@
                                 <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">Interviewer this vacancys</a></li>
-                                        <li><a href="#">Attach new applicant</a></li>
+                                        <%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>
                                         <li><a href="#">Edit</a></li>
                                         <li><a href="#">Remove</a></li>
                                     </ul>

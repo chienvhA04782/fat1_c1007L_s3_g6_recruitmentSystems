@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Web.Services;
+using Action;
 
 namespace Recruitment.Dashboard.Controls.Vacancy
 {
@@ -8,6 +10,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
     public partial class Index : System.Web.UI.Page
     {
         private readonly Action.Vacancys _vacancy = new Action.Vacancys();
+        private readonly Action.Applicant _applicant = new Applicant();
         protected int Count = 1;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -61,7 +64,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
-        protected void lbtn_Addnew_Click(object sender,EventArgs e)
+        protected void lbtn_Addnew_Click(object sender, EventArgs e)
         {
             Panel_ContentAddnew.Visible = true;
         }
@@ -76,17 +79,68 @@ namespace Recruitment.Dashboard.Controls.Vacancy
             return _vacancy.FetchScheduleIdByVacancysId(vacancysId);
         }
 
+        public static int ResultVacancysBySchedule = 0;
         /// <summary>
         /// Filters the vacancys by schedule.
         /// </summary>
         /// <returns></returns>
         public string FilterVacancysBySchedule(int vacancyId)
         {
+            ResultVacancysBySchedule = FetchScheduleIdByVacancysId(vacancyId);
+            if (ResultVacancysBySchedule == 0)
+            {
+                return "<span class='label'>not scheduling" + "</span>";
+            }
+            return FetchCountApplicantAdminConfirm(vacancyId) +
+                   FetchCountApplicantAdminNotConfirm(vacancyId) +
+                   "<a class='btn' href='CheckApplicant.aspx?AppliId=" + vacancyId + "'>View</a>";
+        }
+
+        /// <summary>
+        /// Filters the vacancys by schedule show create interviewer.
+        /// </summary>
+        /// <param name="vacancyId">The vacancy id.</param>
+        /// <returns></returns>
+        public string FilterVacancysByScheduleShowCreateInterviewer(int vacancyId)
+        {
             if (FetchScheduleIdByVacancysId(vacancyId) == 0)
             {
-                return "";
+                return "<li><a href='#' onclick='interviewerThis(" + vacancyId + ")'>Interviewer this vacancys" + "</a></li>" +
+                    "<li><a href='#' onclick='attachNewApplicant(" + vacancyId + ")'>Attach new applicant" + "</a><li>";
             }
-            return "";
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Fetches the count applicant admin confirm.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public string FetchCountApplicantAdminConfirm(int vacancysId)
+        {
+            int st = _applicant.FetchCountApplicantAdminConfirm(vacancysId);
+            if (st != 0)
+            {
+                return "<span class='label label-success'>"
+                       + st + "</span>&nbsp;";
+            }
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Fetches the count applicant admin not confirm.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public string FetchCountApplicantAdminNotConfirm(int vacancysId)
+        {
+            var st = _applicant.FetchCountApplicantAdminNotConfirm(vacancysId);
+            if (st != 0)
+            {
+                return "<span class='label label-warning'>"
+                       + st + "</span>&nbsp;";
+            }
+            return string.Empty;
         }
     }
 }

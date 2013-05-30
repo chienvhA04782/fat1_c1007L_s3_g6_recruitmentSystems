@@ -84,5 +84,82 @@ namespace Action
                 Console.Write(e);
             }
         }
+
+        /// <summary>
+        /// Fetches the count applicant admin confirm.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public int FetchCountApplicantAdminConfirm(int vacancysId)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                return (from c in db.Applicants where vacancysId == c.Vacancy_Id & c.Applicant_Admin_Accept == "true" select c).Count();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the count applicant admin not confirm.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public int FetchCountApplicantAdminNotConfirm(int vacancysId)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                return (from c in db.Applicants where vacancysId == c.Vacancy_Id & c.Applicant_Admin_Accept == "false" select c).Count();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the applicant by schedule.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public List<Share.Applicant> FetchApplicantByScheduleNotFilter(int vacancysId)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                return (from c in db.Applicants where c.Vacancy_Id == vacancysId select c).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Fetches the status applicant by applicant id.
+        /// </summary>
+        /// <param name="applicantId">The applicant id.</param>
+        /// <returns></returns>
+        public string FetchStatusApplicantByApplicantId(int applicantId)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                return (from c in db.Applicants where c.Applicant_Id == applicantId select c.Applicant_Admin_Accept)
+                        .FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return "false";
+            }
+        }
     }
 }

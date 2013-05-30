@@ -65,7 +65,13 @@ namespace Recruitment.Dashboard.Controls.Schedule
         /// <returns></returns>
         public string FetchCountDoneVavancysByShedule(int scheduleId)
         {
-            return "<span class='label label-success'>Done: " + _vacancys.FetchCountDoneVavancysByShedule(scheduleId) + "</span>";
+            var st = _vacancys.FetchCountDoneVavancysByShedule(scheduleId);
+            if (st != 0)
+            {
+                return "<span class='label label-success'>Done: "
+                    + st + "</span>";
+            }
+            return string.Empty;
         }
 
         /// <summary>
@@ -75,7 +81,13 @@ namespace Recruitment.Dashboard.Controls.Schedule
         /// <returns></returns>
         public string FetchCountPendingVacancysBySchedule(int scheduleId)
         {
-            return "<span class='label label-warning'>Pending: " + _vacancys.FetchCountPendingVacancysBySchedule(scheduleId) + "</span>";
+            int st = _vacancys.FetchCountPendingVacancysBySchedule(scheduleId);
+            if (st != 0)
+            {
+                return "<span class='label label-warning'>Pending: "
+               + st + "</span>";
+            }
+            return string.Empty;
         }
 
         /// <summary>

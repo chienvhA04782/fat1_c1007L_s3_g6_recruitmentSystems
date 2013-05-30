@@ -89,3 +89,7 @@ function validateAddnewVacancys() {
     }
     return true;
 }
+
+function viewApplicantInVacancys(id) {
+   
+}
