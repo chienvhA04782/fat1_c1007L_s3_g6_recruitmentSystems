@@ -32,15 +32,7 @@
                 <div class="container">
                     <!-- header -->
                     <header id="header">
-                        <h1 id="logo"><a href="#">HR Group</a></h1>
-                        <!-- search -->
-                        <div class="search">
-
-                            <input type="text" class="field" value="keywords here ..." title="keywords here ..." />
-                            <input type="submit" class="search-btn" value="" />
-                            <div class="cl">&nbsp;</div>
-
-                        </div>
+                        <h1><a id="logonew" style="padding-left: 10px">HR Group</a></h1>
                         <!-- end of search -->
                         <div class="cl">&nbsp;</div>
                     </header>
@@ -151,6 +143,7 @@
                         <style>
                             .vacancysList li {
                                 list-style-type: none;
+                                border-bottom: 1px solid #d1d0d1;
                             }
 
                                 .vacancysList li a {
@@ -158,9 +151,7 @@
                                     display: block;
                                 }
                         </style>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                        
-                        </asp:ContentPlaceHolder>
+
                         <!-- thumbs -->
                         <div id="thumbs-wrapper">
                             <div id="thumbs">
@@ -191,27 +182,28 @@
 
                     <!-- main -->
                     <div class="main">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
                     </div>
                     <!-- end of main -->
                     <div class="cl">&nbsp;</div>
-
-                    <!-- footer -->
-                    <div id="footer">
-                        <div class="footer-nav">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Services</a></li>
-
-                            </ul>
-                            <div class="cl">&nbsp;</div>
-                        </div>
-                        <p class="copy">&copy; Copyright 2012<span>|</span>HR Group.</p>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                    <!-- end of footer -->
                 </div>
                 <!-- end of container -->
+                <!-- footer -->
+                <div id="footer">
+                    <div class="footer-nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Services</a></li>
+
+                        </ul>
+                        <div class="cl">&nbsp;</div>
+                    </div>
+                    <p class="copy">&copy; Copyright 2012<span>|</span>HR Group.</p>
+                    <div class="cl">&nbsp;</div>
+                </div>
+                <!-- end of footer -->
             </div>
             <!-- end of shell -->
         </div>

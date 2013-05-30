@@ -93,7 +93,7 @@ textarea {
     background: url(images/border-title.png) repeat-x 0 bottom;
 }
 
-#logo {
+line-height: 0; position: absolute; t #logo {
     width: 129px;
     font-size: 0;
     line-height: 0;
@@ -102,12 +102,11 @@ textarea {
     left: 21px;
 }
 
-    #logo a {
-        height: 26px;
-        display: block;
-        background: url(images/logo.png) no-repeat 0 0;
-        text-indent: -4000px;
-    }
+#logo a {
+    height: 26px;
+    display: block;
+    text-indent: -4000px;
+}
 
 .search {
     width: 210px;
@@ -201,7 +200,7 @@ textarea {
     overflow: hidden;
     padding: 0 21px;
     position: relative;
-    width: 445px;
+    width: 98%;
 }
 
     .slider ul {
@@ -312,12 +311,11 @@ textarea {
                 }
 
 #thumbs-wrapper {
-     bottom: 18px;
-    left: 10px;
+    bottom: 18px;
     overflow: hidden;
     padding: 0 20px;
     position: absolute;
-    width: 433px;
+    right: 10px;
 }
 
     #thumbs-wrapper a#prev {
