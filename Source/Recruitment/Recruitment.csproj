@@ -154,6 +154,7 @@
     <Content Include="Plugin\Telerik\Telerik.Web.UI.dll" />
     <Content Include="Plugin\Telerik\Telerik.Web.UI.Skins.dll" />
     <Content Include="Plugin\Telerik\Telerik.Web.UI.XML" />
+    <Content Include="ViewVancancys.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +236,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewVancancys.aspx.cs">
+      <DependentUpon>ViewVancancys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewVancancys.aspx.designer.cs">
+      <DependentUpon>ViewVancancys.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.Master" />

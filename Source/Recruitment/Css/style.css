@@ -89,18 +89,10 @@ textarea {
     margin-bottom: 15px;
     position: relative;
     padding-top: 25px;
-    height: 43px;
+    height: 60px;
     background: url(images/border-title.png) repeat-x 0 bottom;
 }
 
-line-height: 0; position: absolute; t #logo {
-    width: 129px;
-    font-size: 0;
-    line-height: 0;
-    position: absolute;
-    top: 23px;
-    left: 21px;
-}
 
 #logo a {
     height: 26px;
@@ -200,7 +192,7 @@ line-height: 0; position: absolute; t #logo {
     overflow: hidden;
     padding: 0 21px;
     position: relative;
-    width: 98%;
+    width: 95%;
 }
 
     .slider ul {

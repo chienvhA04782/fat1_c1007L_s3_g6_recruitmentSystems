@@ -11,6 +11,7 @@ namespace Recruitment
     public partial class Index1 : System.Web.UI.Page
     {
         readonly Vacancys _vacancys = new Vacancys();
+        protected int Count = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
             ltv_AllVacancys.DataSource = FetchAllListVancancys();

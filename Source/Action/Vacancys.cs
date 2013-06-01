@@ -255,5 +255,24 @@ namespace Action
                 return 0;
             }
         }
+
+        /// <summary>
+        /// Client_s the fetch vacancys by vacancys id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public List<Share.Vacancy> Client_FetchVacancysByVacancysId(int vacancysId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return (from c in db.Vacancys where c.Vacancy_Id == vacancysId select c).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
     }
 }

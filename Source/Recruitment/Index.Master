@@ -4,210 +4,211 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>HR Group</title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-    <link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,600,500,300,200,100' rel='stylesheet' type='text/css'>
-
-    <script src="JavaScript/jquery-1.8.0.min.js" type="text/javascript"></script>
-    <!--[if lt IE 9]>
+	<title>HR Group</title>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+	<link rel="shortcut icon" type="image/x-icon" href="css/images/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<link href='http://fonts.googleapis.com/css?family=Raleway:400,900,800,700,600,500,300,200,100' rel='stylesheet' type='text/css'>
+	<link href="Plugin/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="JavaScript/jquery-1.8.0.min.js" type="text/javascript"></script>
+	<!--[if lt IE 9]>
 		<script src="js/modernizr.custom.js"></script>
 	<![endif]-->
-    <script src="JavaScript/jquery.carouFredSel-5.5.0-packed.js" type="text/javascript"></script>
-    <script src="JavaScript/functions.js" type="text/javascript"></script>
+	<script src="JavaScript/jquery.carouFredSel-5.5.0-packed.js" type="text/javascript"></script>
+	<script src="JavaScript/functions.js" type="text/javascript"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        <!-- wrapper -->
-        <div id="wrapper">
-            <!-- shell -->
-            <div class="shell">
-                <!-- container -->
-                <div class="container">
-                    <!-- header -->
-                    <header id="header">
-                        <h1><a id="logonew" style="padding-left: 10px">HR Group</a></h1>
-                        <!-- end of search -->
-                        <div class="cl">&nbsp;</div>
-                    </header>
-                    <!-- end of header -->
-                    <!-- navigaation -->
-                    <nav id="navigation">
-                        <a href="#" class="nav-btn">HOME<span></span></a>
-                        <ul>
-                            <li class="active"><a href="#">home</a></li>
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">services</a></li>
-                        </ul>
-                        <div class="cl">&nbsp;</div>
-                    </nav>
-                    <!-- end of navigation -->
-                    <!-- slider-holder -->
-                    <div class="slider-holder">
-                        <!-- slider -->
-                        <div class="slider">
-                            <div class="socials">
-                                <a href="#" class="facebook-ico">facebook-ico</a>
-                                <a href="#" class="twitter-ico">twitter-ico</a>
-                                <a href="#" class="skype-ico">skype-ico</a>
-                                <a href="#" class="rss-ico">rss-ico</a>
-                                <div class="cl">&nbsp;</div>
-                            </div>
+	<form id="form1" runat="server">
+		<div>
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		<!-- wrapper -->
+		<div id="wrapper">
+			<!-- shell -->
+			<div class="shell">
+				<!-- container -->
+				<div class="container">
+					<!-- header -->
+					<header id="header">
+						<h1><a id="logonew" style="padding-left: 10px">HR Group</a></h1>
+						<!-- end of search -->
+						<div class="cl">&nbsp;</div>
+					</header>
+					<!-- end of header -->
+					<!-- navigaation -->
+					<nav id="navigation">
+						<a href="#" class="nav-btn">HOME<span></span></a>
+						<ul>
+							<li class="active"><a href="Index.aspx">home</a></li>
+							<li><a href="#">about us</a></li>
+							<li><a href="#">services</a></li>
+						</ul>
+						<div class="cl">&nbsp;</div>
+					</nav>
+					<!-- end of navigation -->
+					<asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+						<!-- slider-holder -->
+						<div class="slider-holder">
+							<!-- slider -->
+							<div class="slider">
+								<div class="socials">
+									<a href="#" class="facebook-ico">facebook-ico</a>
+									<a href="#" class="twitter-ico">twitter-ico</a>
+									<a href="#" class="skype-ico">skype-ico</a>
+									<a href="#" class="rss-ico">rss-ico</a>
+									<div class="cl">&nbsp;</div>
+								</div>
 
-                            <div class="arrs">
-                                <a href="#" class="prev-arr"></a>
-                                <a href="#" class="next-arr"></a>
-                            </div>
+								<div class="arrs">
+									<a href="#" class="prev-arr"></a>
+									<a href="#" class="next-arr"></a>
+								</div>
 
-                            <ul>
-                                <li id="img1">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+								<ul>
+									<li id="img1">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img2">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+									<li id="img2">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img3">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+									<li id="img3">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img4">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+									<li id="img4">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img5">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+									<li id="img5">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img6">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+									<li id="img6">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img7">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
+									<li id="img7">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
 
-                                <li id="img8">
-                                    <div class="slide-cnt">
-                                        <h4>Heading Title Goes</h4>
-                                        <h2>Just Like That</h2>
-                                        <p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
-                                    </div>
-                                    <img src="css/images/mac-img.png" alt="" />
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- end of slider -->
-                        <style>
-                            .vacancysList li {
-                                list-style-type: none;
-                                border-bottom: 1px solid #d1d0d1;
-                            }
+									<li id="img8">
+										<div class="slide-cnt">
+											<h4>Heading Title Goes</h4>
+											<h2>Just Like That</h2>
+											<p>Acor porta mi, non venenatis augue imperdiet quis. Nam faucibus, felis ut suscipit vulputate, tortor quam ultricies neque, eget dignissim elit urna a metus. Aliquam sed quam dui, id lacinia nunc. <a href="#">read more</a></p>
+										</div>
+										<img src="css/images/mac-img.png" alt="" />
+									</li>
+								</ul>
+							</div>
+							<!-- end of slider -->
+							<style>
+								.vacancysList li {
+									list-style-type: none;
+									border-bottom: 1px solid #d1d0d1;
+								}
 
-                                .vacancysList li a {
-                                    padding-bottom: 10px;
-                                    display: block;
-                                }
-                        </style>
+									.vacancysList li a {
+										padding-bottom: 10px;
+										display: block;
+									}
+							</style>
 
-                        <!-- thumbs -->
-                        <div id="thumbs-wrapper">
-                            <div id="thumbs">
-                                <a href="#img1" class="selected">
-                                    <img src="css/images/thumb.png" /></a>
-                                <a href="#img2">
-                                    <img src="css/images/thumb2.png" /></a>
-                                <a href="#img3">
-                                    <img src="css/images/thumb3.png" /></a>
-                                <a href="#img4">
-                                    <img src="css/images/thumb4.png" /></a>
-                                <a href="#img5">
-                                    <img src="css/images/thumb.png" /></a>
-                                <a href="#img6">
-                                    <img src="css/images/thumb2.png" /></a>
-                                <a href="#img7">
-                                    <img src="css/images/thumb3.png" /></a>
-                                <a href="#img8">
-                                    <img src="css/images/thumb4.png" /></a>
-                            </div>
-                            <a id="prev" href="#"></a>
-                            <a id="next" href="#"></a>
-                        </div>
+							<!-- thumbs -->
+							<div id="thumbs-wrapper">
+								<div id="thumbs">
+									<a href="#img1" class="selected">
+										<img src="css/images/thumb.png" /></a>
+									<a href="#img2">
+										<img src="css/images/thumb2.png" /></a>
+									<a href="#img3">
+										<img src="css/images/thumb3.png" /></a>
+									<a href="#img4">
+										<img src="css/images/thumb4.png" /></a>
+									<a href="#img5">
+										<img src="css/images/thumb.png" /></a>
+									<a href="#img6">
+										<img src="css/images/thumb2.png" /></a>
+									<a href="#img7">
+										<img src="css/images/thumb3.png" /></a>
+									<a href="#img8">
+										<img src="css/images/thumb4.png" /></a>
+								</div>
+								<a id="prev" href="#"></a>
+								<a id="next" href="#"></a>
+							</div>
 
 
-                        <!-- end of thumbs -->
-                    </div>
+							<!-- end of thumbs -->
+						</div>
+					</asp:ContentPlaceHolder>
+					<!-- main -->
+					<div class="main">
+						<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+						</asp:ContentPlaceHolder>
+					</div>
+					<!-- end of main -->
+					<div class="cl">&nbsp;</div>
+				</div>
+				<!-- end of container -->
+				<!-- footer -->
+				<div id="footer">
+					<div class="footer-nav">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About</a></li>
+							<li><a href="#">Services</a></li>
 
-                    <!-- main -->
-                    <div class="main">
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                    <!-- end of main -->
-                    <div class="cl">&nbsp;</div>
-                </div>
-                <!-- end of container -->
-                <!-- footer -->
-                <div id="footer">
-                    <div class="footer-nav">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Services</a></li>
-
-                        </ul>
-                        <div class="cl">&nbsp;</div>
-                    </div>
-                    <p class="copy">&copy; Copyright 2012<span>|</span>HR Group.</p>
-                    <div class="cl">&nbsp;</div>
-                </div>
-                <!-- end of footer -->
-            </div>
-            <!-- end of shell -->
-        </div>
-        <!-- end of wrapper -->
-    </form>
+						</ul>
+						<div class="cl">&nbsp;</div>
+					</div>
+					<p class="copy">&copy; Copyright 2012<span>|</span>HR Group.</p>
+					<div class="cl">&nbsp;</div>
+				</div>
+				<!-- end of footer -->
+			</div>
+			<!-- end of shell -->
+		</div>
+		<!-- end of wrapper -->
+	</form>
 </body>
 </html>
