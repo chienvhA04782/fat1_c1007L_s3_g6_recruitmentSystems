@@ -52,3 +52,17 @@ H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\bin\EntityFramework.x
 H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.csprojResolveAssemblyReference.cache
 H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.dll
 H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.pdb
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Recruitment.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Recruitment.pdb
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Action.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Share.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.Skins.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\EntityFramework.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Action.pdb
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Share.pdb
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\Telerik.Web.UI.xml
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\bin\EntityFramework.xml
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.csprojResolveAssemblyReference.cache
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Recruitment\obj\Debug\Recruitment.pdb

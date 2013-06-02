@@ -167,19 +167,42 @@ namespace Action
         /// </summary>
         /// <param name="applicants"></param>
         /// <returns></returns>
-        public bool CreateApplicantByVacancysId(Share.Applicant applicants)
+        public int CreateApplicantByVacancysId(Share.Applicant applicants)
         {
             try
             {
                 var db = new RecruitmentEntities();
                 db.Applicants.Add(applicants);
-                return true;
+                db.SaveChanges();
+
+                return applicants.Applicant_Id;
             }
             catch (Exception e)
             {
 
                 Console.Write(e);
-                return false;
+                return 0;
+            }
+        }
+
+        /// <summary>
+        /// Updates the applicant after create.
+        /// </summary>
+        /// <param name="applicantId"></param>
+        /// <param name="apps"></param>
+        public void UpdateApplicantAfterCreate(int applicantId,Share.Applicant apps)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                Share.Applicant app =
+                    (from c in db.Applicants where c.Applicant_Id == applicantId select c).FirstOrDefault();
+                if (app != null) app.Applicant_CVPath = apps.Applicant_CVPath;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
             }
         }
     }

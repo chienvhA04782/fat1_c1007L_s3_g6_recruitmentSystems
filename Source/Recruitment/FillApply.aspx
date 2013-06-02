@@ -36,6 +36,18 @@
                 </td>
             </tr>
             <tr>
+                <td>
+                    Address
+                </td>
+                <td>
+                    <asp:TextBox ID="txtaddress" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="red" runat="server" ErrorMessage="(*)" 
+                        ControlToValidate="txtaddress">
+                        
+                    </asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
                 <td>Email
                 </td>
                 <td>

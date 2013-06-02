@@ -28,3 +28,10 @@ H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\bin\Debug\EntityFramework.x
 H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\obj\Debug\Share.dll
 H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\obj\Debug\Share.pdb
 H:\fat1_c1007L_s4_g6_recruitmentSystems\Source\Share\obj\Debug\Share.csprojResolveAssemblyReference.cache
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\bin\Debug\Share.dll.config
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\bin\Debug\Share.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\bin\Debug\Share.pdb
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\bin\Debug\EntityFramework.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\bin\Debug\EntityFramework.xml
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\obj\Debug\Share.dll
+H:\fat1_c1007L_s3_g6_recruitmentSystems\Source\Share\obj\Debug\Share.pdb

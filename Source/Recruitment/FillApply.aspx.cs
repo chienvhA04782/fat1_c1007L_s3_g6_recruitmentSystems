@@ -5,10 +5,14 @@ namespace Recruitment
 {
     public partial class FillApply : System.Web.UI.Page
     {
-        Applicant _applicant;
+        readonly Applicant _applicant = new Applicant();
+        private static int _idva;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.QueryString["vacancysId"] != null)
+            {
+                _idva = Convert.ToInt32(Request.QueryString["vacancysId"]);
+            }
         }
 
         /// <summary>
@@ -16,15 +20,38 @@ namespace Recruitment
         /// </summary>
         /// <param name="applicants">The applicants.</param>
         /// <returns></returns>
-        public bool CreateApplicantByVacancysId(Share.Applicant applicants)
+        public int CreateApplicantByVacancysId(Share.Applicant applicants)
         {
-            _applicant = new Applicant();
             return _applicant.CreateApplicantByVacancysId(applicants);
         }
 
         protected void btnCreateApplicant_Click(object sender, EventArgs e)
         {
-            var applicantCreate = new Share.Applicant();
+            if (FileUpload1.HasFile)
+            {
+                var applicantCreate = new Share.Applicant
+                    {
+                        Applicant_FullName = txtFullname.Text,
+                        Applicant_FoneNumber = txtNumber.Text,
+                        Applicant_Email = txtEmail.Text,
+                        Applicant_Address = txtaddress.Text,
+                        Vacancy_Id = _idva,
+                        Applicant_Admin_Accept = "false",
+                        Applicant_Client_Confirm = "false"
+                    };
+
+                // create
+                int idnew = CreateApplicantByVacancysId(applicantCreate);
+
+                string path = Server.MapPath("~/Data_CV/" + idnew + "_" + FileUpload1.FileName);
+                FileUpload1.SaveAs(path);
+
+                var appliUpdate = new Share.Applicant();
+                appliUpdate.Applicant_CVPath = "~/Data_CV/" + idnew + "_" + FileUpload1.FileName;
+
+                // update
+                _applicant.UpdateApplicantAfterCreate(idnew, appliUpdate);
+            }
         }
     }
 }
