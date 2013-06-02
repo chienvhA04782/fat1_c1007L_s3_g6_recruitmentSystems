@@ -161,5 +161,26 @@ namespace Action
                 return "false";
             }
         }
+
+        /// <summary>
+        /// Creates the applicant by vacancys id.
+        /// </summary>
+        /// <param name="applicants"></param>
+        /// <returns></returns>
+        public bool CreateApplicantByVacancysId(Share.Applicant applicants)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                db.Applicants.Add(applicants);
+                return true;
+            }
+            catch (Exception e)
+            {
+
+                Console.Write(e);
+                return false;
+            }
+        }
     }
 }
