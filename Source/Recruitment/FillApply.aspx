@@ -16,7 +16,7 @@
         <h2 style="font-weight: normal; font-size: 22px">Infor Applicant</h2>
         <table style="width: 600px">
             <tr>
-                <td>FullName
+                <td style="width: 100px">FullName
                 </td>
                 <td>
                     <asp:TextBox ID="txtFullname" runat="server"></asp:TextBox>
@@ -36,12 +36,11 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    Address
+                <td>Address
                 </td>
                 <td>
                     <asp:TextBox ID="txtaddress" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="red" runat="server" ErrorMessage="(*)" 
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="red" runat="server" ErrorMessage="(*)"
                         ControlToValidate="txtaddress">
                         
                     </asp:RequiredFieldValidator>
@@ -65,6 +64,11 @@
                     <asp:FileUpload ID="FileUpload1" runat="server" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ForeColor="red" ErrorMessage="(*)" ControlToValidate="FileUpload1">
                     </asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ForeColor="red" ControlToValidate="FileUpload1"
+                         ErrorMessage="(*File upload not valid. just alow .doc and .docx format)"
+                         ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.doc|.docx)$">
+                        
+                    </asp:RegularExpressionValidator>
                 </td>
             </tr>
         </table>

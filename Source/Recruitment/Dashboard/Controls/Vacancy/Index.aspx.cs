@@ -11,6 +11,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
     {
         private readonly Action.Vacancys _vacancy = new Action.Vacancys();
         private readonly Action.Applicant _applicant = new Applicant();
+        private readonly Action.Schedule _schedule = new Action.Schedule();
         protected int Count = 1;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         }
 
         public static int ResultVacancysBySchedule = 0;
+
         /// <summary>
         /// Filters the vacancys by schedule.
         /// </summary>
@@ -87,13 +89,33 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         public string FilterVacancysBySchedule(int vacancyId)
         {
             ResultVacancysBySchedule = FetchScheduleIdByVacancysId(vacancyId);
+            return FetchCountApplicantAdminConfirm(vacancyId) +
+                   FetchCountApplicantAdminNotConfirm(vacancyId) +
+                   "<a class='btn' href='CheckApplicant.aspx?AppliId=" + vacancyId + "'>View</a>";
+        }
+
+        /// <summary>
+        /// Filters the vacancys by schedule.
+        /// </summary>
+        /// <returns></returns>
+        public string FilterVacancysHaveOrNotByvacancyId(int vacancyId, int scheduleId)
+        {
+            ResultVacancysBySchedule = FetchScheduleIdByVacancysId(vacancyId);
             if (ResultVacancysBySchedule == 0)
             {
                 return "<span class='label'>not scheduling" + "</span>";
             }
-            return FetchCountApplicantAdminConfirm(vacancyId) +
-                   FetchCountApplicantAdminNotConfirm(vacancyId) +
-                   "<a class='btn' href='CheckApplicant.aspx?AppliId=" + vacancyId + "'>View</a>";
+            return FetchDateScheduleByScheduleId(scheduleId);
+        }
+
+        /// <summary>
+        /// Fetches the date schedule by schedule id.
+        /// </summary>
+        /// <param name="scheduleId">The schedule id.</param>
+        /// <returns></returns>
+        public String FetchDateScheduleByScheduleId(int scheduleId)
+        {
+            return _schedule.FetchDateScheduleByScheduleId(scheduleId);
         }
 
         /// <summary>

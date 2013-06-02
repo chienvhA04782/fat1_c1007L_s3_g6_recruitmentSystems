@@ -13,11 +13,9 @@
                         <RowIndicatorColumn Visible="True" FilterControlAltText="Filter RowIndicator column">
                             <HeaderStyle Width="20px"></HeaderStyle>
                         </RowIndicatorColumn>
-
                         <ExpandCollapseColumn Visible="True" FilterControlAltText="Filter ExpandColumn column">
                             <HeaderStyle Width="20px"></HeaderStyle>
                         </ExpandCollapseColumn>
-
                         <Columns>
                             <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column"
                                 HeaderText="Vacancy Code" UniqueName="TemplateColumn">

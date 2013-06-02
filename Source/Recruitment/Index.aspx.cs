@@ -14,12 +14,12 @@ namespace Recruitment
         protected int Count = 1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ltv_AllVacancys.DataSource = FetchAllListVancancys();
+            ltv_AllVacancys.DataSource = Client_FetchAllListVancancys();
             ltv_AllVacancys.DataBind();
         }
-        private List<Share.Vacancy> FetchAllListVancancys()
+        private List<Share.Vacancy> Client_FetchAllListVancancys()
         {
-            return _vacancys.FetchAllListVancancys();
+            return _vacancys.Client_FetchAllListVancancys();
         } 
     }
 }

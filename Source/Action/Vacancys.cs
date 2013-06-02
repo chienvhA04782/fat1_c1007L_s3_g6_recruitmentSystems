@@ -210,6 +210,24 @@ namespace Action
             }
         }
 
+
+        /// <summary>
+        /// Client_s the fetch all list vancancys.
+        /// </summary>
+        /// <returns></returns>
+        public List<Share.Vacancy> Client_FetchAllListVancancys()
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return (from c in db.Vacancys where string.IsNullOrEmpty(c.Vacancy_Status) orderby c.Vacancy_Id descending select c).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
         /// <summary>
         /// Creates the new vacancys.
         /// </summary>

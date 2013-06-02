@@ -43,6 +43,11 @@
                                 <%#FilterVacancysBySchedule(Convert.ToInt32(Eval("Vacancy_Id"))) %>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Schedule">
+                            <ItemTemplate>
+                                <%#FilterVacancysHaveOrNotByvacancyId(Convert.ToInt32(Eval("Vacancy_Id")),Convert.ToInt32(Eval("Schedule_Id"))) %>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Type">
                             <ItemTemplate>
                                 <%#Eval("Vacancy_TypeTime")%>
@@ -51,11 +56,6 @@
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Address">
                             <ItemTemplate>
                                 <%#Eval("Vacancy_WorkAddress")%>
-                            </ItemTemplate>
-                        </telerik:GridTemplateColumn>
-                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date Start">
-                            <ItemTemplate>
-                                <%#Eval("Vacancy_DateStart")%>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date End">

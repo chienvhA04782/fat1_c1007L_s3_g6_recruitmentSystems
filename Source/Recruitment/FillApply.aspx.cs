@@ -27,30 +27,44 @@ namespace Recruitment
 
         protected void btnCreateApplicant_Click(object sender, EventArgs e)
         {
-            if (FileUpload1.HasFile)
+            try
             {
-                var applicantCreate = new Share.Applicant
-                    {
-                        Applicant_FullName = txtFullname.Text,
-                        Applicant_FoneNumber = txtNumber.Text,
-                        Applicant_Email = txtEmail.Text,
-                        Applicant_Address = txtaddress.Text,
-                        Vacancy_Id = _idva,
-                        Applicant_Admin_Accept = "false",
-                        Applicant_Client_Confirm = "false"
-                    };
 
-                // create
-                int idnew = CreateApplicantByVacancysId(applicantCreate);
 
-                string path = Server.MapPath("~/Data_CV/" + idnew + "_" + FileUpload1.FileName);
-                FileUpload1.SaveAs(path);
+                if (FileUpload1.HasFile)
+                {
+                    var applicantCreate = new Share.Applicant
+                        {
+                            Applicant_FullName = txtFullname.Text,
+                            Applicant_FoneNumber = txtNumber.Text,
+                            Applicant_Email = txtEmail.Text,
+                            Applicant_Address = txtaddress.Text,
+                            Vacancy_Id = _idva,
+                            Applicant_Admin_Accept = "false",
+                            Applicant_Client_Confirm = "false"
+                        };
 
-                var appliUpdate = new Share.Applicant();
-                appliUpdate.Applicant_CVPath = "~/Data_CV/" + idnew + "_" + FileUpload1.FileName;
+                    // create
+                    int idnew = CreateApplicantByVacancysId(applicantCreate);
 
-                // update
-                _applicant.UpdateApplicantAfterCreate(idnew, appliUpdate);
+                    string path = Server.MapPath("~/Data_CV/" + idnew + "_" + FileUpload1.FileName);
+                    FileUpload1.SaveAs(path);
+
+                    var appliUpdate = new Share.Applicant();
+                    appliUpdate.Applicant_CVPath = "~/Data_CV/" + idnew + "_" + FileUpload1.FileName;
+
+                    // update
+                    _applicant.UpdateApplicantAfterCreate(idnew, appliUpdate);
+                    Console.Write(
+                        "<Script>alert('thank you ! we will check and send schedule interviewer to you email provider');" +
+                        "</script>");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(
+                       "<Script>alert('ERROR' Please try again!);" +
+                       "</script>");
             }
         }
     }
