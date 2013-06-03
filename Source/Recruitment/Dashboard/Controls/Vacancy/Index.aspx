@@ -71,7 +71,7 @@
                                                 Visible='<%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>'
                                                 CommandArgument='<%#Eval("Vacancy_Id")%>'
                                                 OnClick="lbtn_IntervierThis_Click" OnClientClick="ViewDetailsVacancysInInterViewer();">
-                                                Interviewer this vacancys
+                                                create schedule interview
                                             </asp:LinkButton>
                                         </li>
                                         <li>

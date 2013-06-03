@@ -2,13 +2,13 @@
 
 namespace Share
 {
-    class EmailsProcess
+    public class EmailsProcess
     {
         public EmailsProcess()
         {
 
         }
-        private void Sendmail()
+        public void Sendmail(string emailTo)
         {
             var client = new SmtpClient
                 {
@@ -19,14 +19,14 @@ namespace Share
                 };
 
             // setup Smtp authentication
-            var credentials = new System.Net.NetworkCredential("acn.reply@gmail.com", "acn1024_1");
+            var credentials = new System.Net.NetworkCredential("chienmanship@gmail.com", "013481311");
             client.UseDefaultCredentials = false;
             client.Credentials = credentials;
 
-            var msg = new MailMessage { From = new MailAddress("acn.reply@gmail.com") };
-            msg.To.Add(new MailAddress("vh04782@acnvn.vn"));
+            var msg = new MailMessage { From = new MailAddress("chienmanship@gmail.com") };
+            msg.To.Add(new MailAddress(emailTo));
 
-            msg.Subject = "Test Emails";
+            msg.Subject = "HR GROUP CONFIRM INTERVIEW";
             msg.IsBodyHtml = true;
             msg.Body = string.Format("<html><head></head><body><h2>Hello</h2></body>");
             client.Send(msg);

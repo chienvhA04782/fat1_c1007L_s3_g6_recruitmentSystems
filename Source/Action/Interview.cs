@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Share;
 
@@ -28,6 +29,9 @@ namespace Action
                         va.Vacancy_TimeInterViewer = vacancys.Vacancy_TimeInterViewer;
                         va.Vacancy_Status = "Waiting";
                         db.SaveChanges();
+
+                        // email send for confirm
+                        SenEmailForConfirm(vacancys.Vacancy_Id);
                     }
                 }
                 else
@@ -49,11 +53,29 @@ namespace Action
                     }
                     db.SaveChanges();
                     // update vacancys
+
+                    // email send for confirm
+                    SenEmailForConfirm(vacancys.Vacancy_Id);
                 }
             }
             catch (Exception e)
             {
                 Console.Write(e);
+            }
+        }
+
+        /// <summary>
+        /// Sens the email for confirm.
+        /// </summary>
+        private void SenEmailForConfirm(int vacancysId)
+        {
+            var  email = new EmailsProcess();
+            var db = new RecruitmentEntities();
+            List<Share.Applicant> applicant =
+                (from c in db.Applicants where c.Vacancy_Id == vacancysId select c).ToList();
+            foreach (var appli in applicant)
+            {
+                email.Sendmail(appli.Applicant_Email);
             }
         }
     }

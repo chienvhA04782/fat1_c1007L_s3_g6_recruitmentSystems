@@ -197,7 +197,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         /// <param name="dateInterViewer">The date inter viewer.</param>
         public void CreateInterViewer(Share.Vacancy vacancys, string dateInterViewer)
         {
-            var interviewer = new Action.Interview();
+            var interviewer = new Interview();
             interviewer.CreateInterViewer(vacancys, dateInterViewer);
         }
 
