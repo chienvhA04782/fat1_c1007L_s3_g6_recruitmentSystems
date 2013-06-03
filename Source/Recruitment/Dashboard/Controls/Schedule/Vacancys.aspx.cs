@@ -111,12 +111,15 @@ namespace Recruitment.Dashboard.Controls.Schedule
         /// Handles the Click event of the ViewApplicant control.
         /// </summary>
         private static int _idVacancys;
+
+        public static int IdVacancys;
         public void ViewApplicant_Click(object sender, EventArgs e)
         {
             Panel_DetailsVacancys.Visible = false;
             PnlViewUpdateApplicant.Visible = true;
 
             var lbtn = (LinkButton)sender;
+            IdVacancys = Convert.ToInt32(lbtn.CommandArgument);
             BinApplicantByApplicantId(Convert.ToInt32(lbtn.CommandArgument));
             _idVacancys = Convert.ToInt32(lbtn.CommandArgument);
 
@@ -178,7 +181,7 @@ namespace Recruitment.Dashboard.Controls.Schedule
             UpdateApplicantResultByApplicantId(Convert.ToInt32(arr[0]), arr[1]);
 
             // reload
-            BinApplicantByApplicantId(Convert.ToInt32(arr[0]));
+            BinApplicantByApplicantId(IdVacancys);
         }
 
         /// <summary>
