@@ -292,5 +292,53 @@ namespace Action
                 return null;
             }
         }
+
+        /// <summary>
+        /// Fetches the time only by vacancy id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public string FetchTimeOnlyByVacancyId(int vacancysId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return (from c in db.Vacancys where c.Vacancy_Id == vacancysId select c.Vacancy_TimeInterViewer).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Deletes the vacancys by vacancys id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        public void DeleteVacancysByVacancysId(int vacancysId)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+
+                // remove applicant
+                List<Share.Applicant> applicant =
+                    (from c in db.Applicants where c.Vacancy_Id == vacancysId select c).ToList();
+                foreach (var appli in applicant)
+                {
+                    db.Applicants.Remove(appli);
+                    db.SaveChanges();
+                }
+                // remove vacancys
+                Share.Vacancy vacan = (from c in db.Vacancys where c.Vacancy_Id == vacancysId select c).FirstOrDefault();
+                db.Vacancys.Remove(vacan);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+            }
+        }
     }
 }

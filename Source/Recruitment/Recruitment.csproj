@@ -112,8 +112,8 @@
     <Content Include="Css\images\thumb4.png" />
     <Content Include="Css\preview.css" />
     <Content Include="Css\style.css" />
-    <Content Include="Dashboard\Controls\Interviewer\Index.aspx" />
-    <Content Include="Dashboard\Controls\Interviewer\Update.ascx" />
+    <Content Include="Dashboard\Controls\Interview\Index.aspx" />
+    <Content Include="Dashboard\Controls\Interview\Update.ascx" />
     <Content Include="Dashboard\Controls\Schedule\Index.aspx" />
     <Content Include="Dashboard\Controls\Schedule\Vacancys.aspx" />
     <Content Include="Dashboard\Controls\Vacancy\CheckApplicant.aspx" />
@@ -159,18 +159,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard\Controls\Interviewer\Index.aspx.cs">
+    <Compile Include="Dashboard\Controls\Interview\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Controls\Interviewer\Index.aspx.designer.cs">
+    <Compile Include="Dashboard\Controls\Interview\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard\Controls\Interviewer\Update.ascx.cs">
+    <Compile Include="Dashboard\Controls\Interview\Update.ascx.cs">
       <DependentUpon>Update.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Controls\Interviewer\Update.ascx.designer.cs">
+    <Compile Include="Dashboard\Controls\Interview\Update.ascx.designer.cs">
       <DependentUpon>Update.ascx</DependentUpon>
     </Compile>
     <Compile Include="Dashboard\Controls\Schedule\Index.aspx.cs">

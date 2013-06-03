@@ -28,5 +28,23 @@ namespace Action
         }
 
         public static int IdAmin = 1;
+
+        /// <summary>
+        /// Fetches the list role interviewer.
+        /// </summary>
+        /// <returns></returns>
+        public List<Share.Admin> FetchListRoleInterviewer()
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return (from c in db.Admins where c.Admin_Role.Trim().Equals("Interview") select c).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        } 
     }
 }

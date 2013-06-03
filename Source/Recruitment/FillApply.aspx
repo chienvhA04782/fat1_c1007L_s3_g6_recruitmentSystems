@@ -64,11 +64,11 @@
                     <asp:FileUpload ID="FileUpload1" runat="server" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ForeColor="red" ErrorMessage="(*)" ControlToValidate="FileUpload1">
                     </asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ForeColor="red" ControlToValidate="FileUpload1"
+                  <%--  <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ForeColor="red" 
+                        ControlToValidate="FileUpload1"
                          ErrorMessage="(*File upload not valid. just alow .doc and .docx format)"
                          ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.doc|.docx)$">
-                        
-                    </asp:RegularExpressionValidator>
+                    </asp:RegularExpressionValidator>--%>
                 </td>
             </tr>
         </table>

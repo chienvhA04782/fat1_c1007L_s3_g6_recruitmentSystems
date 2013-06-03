@@ -12,7 +12,7 @@ namespace Share
     using System;
     using System.Collections.Generic;
     
-    public partial class Interviewer
+    public partial class Interview
     {
         public int Interviewer_Id { get; set; }
         public Nullable<int> Schedule_Id { get; set; }

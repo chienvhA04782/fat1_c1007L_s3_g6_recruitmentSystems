@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <h3><a href="Index.aspx">Schedule Interviewer</a> - View Vacancys [<asp:Label ID="Label_DateVacancys" runat="server" Text="Label"></asp:Label>]</h3>
+        <h3><a href="Index.aspx">Schedule Interview</a> - View Vacancys [<asp:Label ID="Label_DateVacancys" runat="server" Text="Label"></asp:Label>]</h3>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <telerik:RadGrid ID="RdBridViewVacancyss" runat="server" AutoGenerateColumns="False" CellSpacing="0" GridLines="None">

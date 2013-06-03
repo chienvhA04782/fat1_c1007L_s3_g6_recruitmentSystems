@@ -45,7 +45,7 @@
                         </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Schedule">
                             <ItemTemplate>
-                                <%#FilterVacancysHaveOrNotByvacancyId(Convert.ToInt32(Eval("Vacancy_Id")),Convert.ToInt32(Eval("Schedule_Id"))) %>
+                                <%#FilterVacancysHaveOrNotByvacancyId(Convert.ToInt32(Eval("Vacancy_Id")),Convert.ToInt32(Eval("Schedule_Id")),Convert.ToInt32(Eval("Admin_Id"))) %>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Type">
@@ -58,11 +58,6 @@
                                 <%#Eval("Vacancy_WorkAddress")%>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
-                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date End">
-                            <ItemTemplate>
-                                <%#Eval("Vacancy_DateEnd")%>
-                            </ItemTemplate>
-                        </telerik:GridTemplateColumn>
                         <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Action">
                             <ItemTemplate>
                                 <div class="btn-group">
@@ -72,9 +67,10 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li>
-                                            <asp:LinkButton ID="lbtn_IntervierThis" runat="server" OnClientClick="ViewApplicantInInterViewer();"
-                                                Visible='<%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>' CommandArgument='<%#Eval("Vacancy_Id")%>'
-                                                 OnClick="lbtn_IntervierThis_Click">
+                                            <asp:LinkButton ID="lbtn_IntervierThis" runat="server"
+                                                Visible='<%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>'
+                                                CommandArgument='<%#Eval("Vacancy_Id")%>'
+                                                OnClick="lbtn_IntervierThis_Click" OnClientClick="ViewDetailsVacancysInInterViewer();">
                                                 Interviewer this vacancys
                                             </asp:LinkButton>
                                         </li>
@@ -84,9 +80,17 @@
                                             </asp:LinkButton>
                                         </li>
                                         <li><a href="#">Edit</a></li>
-                                        <li><a href="#">Remove</a></li>
+                                        <li>
+                                            <asp:LinkButton ID="lbtnRemove" runat="server"
+                                                 OnClick="lbtnRemove_Click" CommandArgument='<%#Eval("Vacancy_Id")%>' OnClientClick="if(confirm('are you sure?')){return true;}return false;">Remove</asp:LinkButton>
+                                        </li>
                                     </ul>
                                 </div>
+                            </ItemTemplate>
+                        </telerik:GridTemplateColumn>
+                        <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Date End">
+                            <ItemTemplate>
+                                <%#Eval("Vacancy_DateEnd")%>
                             </ItemTemplate>
                         </telerik:GridTemplateColumn>
                     </Columns>
@@ -203,7 +207,7 @@
                                 <td>Age
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtage" runat="server" MaxLength="2"></asp:TextBox>
+                                    <asp:TextBox ID="txtage" runat="server" MaxLength="10"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -237,23 +241,35 @@
                     <div class="boxApplicantUpdate">
                         <table style="width: 100%">
                             <tr style="border: none">
-                                <td style="border: none">Date
+                                <td style="width: 60px">Date
                                 </td>
                                 <td style="border: none">
-                                    <telerik:RadDatePicker ID="RadDatePicker_DateInter" runat="server"></telerik:RadDatePicker>
+                                    <telerik:RadDatePicker ID="RadDatePicker_DateInter"
+                                        ClientIDMode="Static" runat="server" DateInput-DisplayDateFormat="dd/MM/yyyy">
+                                    </telerik:RadDatePicker>
+                                </td>
+                            </tr>
+                            <tr style="border: none;">
+                                <td style="width: 60px">Time
+                                </td>
+                                <td>
+                                    <telerik:RadTimePicker ID="RadTimePicker_TimeInter" ClientIDMode="Static" runat="server">
+                                    </telerik:RadTimePicker>
                                 </td>
                             </tr>
                             <tr style="border: none">
-                                <td>Time
+                                <td style="width: 60px">Interviewer
                                 </td>
-                                <td>
-                                    <telerik:RadTimePicker ID="RadTimePicker_TimeInter" runat="server"></telerik:RadTimePicker>
+                                <td style="padding-left: 8px">
+                                    <asp:DropDownList ID="dropdownListInterviewer" runat="server" Width="130px" Height="26px">
+                                    </asp:DropDownList>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div style="text-align: right; padding-right: 10px">
-                        <asp:Button ID="btnCreateInterViewer" runat="server" Text="Create" CssClass="btn" OnClick="btnCreateInterViewer_Click" />
+                        <asp:Button ID="btnCreateInterViewer" runat="server" Text="Create" CssClass="btn"
+                            OnClick="btnCreateInterViewer_Click" OnClientClick="return validate_CreateInterView();" />
                     </div>
                 </div>
             </asp:Panel>

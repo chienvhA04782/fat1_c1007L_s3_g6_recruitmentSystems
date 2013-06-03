@@ -29,8 +29,6 @@ namespace Recruitment
         {
             try
             {
-
-
                 if (FileUpload1.HasFile)
                 {
                     var applicantCreate = new Share.Applicant

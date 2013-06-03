@@ -27,6 +27,7 @@ namespace Share
         public string Vacancy_Salary { get; set; }
         public string Vacancy_Positions { get; set; }
         public Nullable<int> Vacancy_NumberPeople { get; set; }
+        public string Vacancy_Skill { get; set; }
         public string Vacancy_Exp { get; set; }
         public string Vacancy_Gender { get; set; }
         public string Vacancy_Age { get; set; }
@@ -37,9 +38,10 @@ namespace Share
         public string Vacancy_DateInterViewer { get; set; }
         public string Vacancy_TimeInterViewer { get; set; }
         public string Vacancy_Status { get; set; }
-        public string Vacancy_Skill { get; set; }
+        public Nullable<int> Admin_Id { get; set; }
     
-        public virtual Schedule Schedule { get; set; }
         public virtual ICollection<Applicant> Applicants { get; set; }
+        public virtual Admin Admin { get; set; }
+        public virtual Schedule Schedule { get; set; }
     }
 }

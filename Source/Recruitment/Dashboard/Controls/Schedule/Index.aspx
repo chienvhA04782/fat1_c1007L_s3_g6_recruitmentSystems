@@ -126,11 +126,7 @@
                         <%#FetchResultInterviewerDayBySchedule(Convert.ToInt32(Eval("Schedule_Id"))) %>
                     </ItemTemplate>
                 </telerik:GridTemplateColumn>
-                <telerik:GridTemplateColumn HeaderText="Author" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
-                    <ItemTemplate>
-                        <%#FetchUserNameAdminByAdminId(Convert.ToInt32(Eval("Admin_Id"))) %>
-                    </ItemTemplate>
-                </telerik:GridTemplateColumn>
+             
                 <telerik:GridTemplateColumn HeaderText="Date/Time Create" UniqueName="TemplateColumn" FilterControlAltText="Filter TemplateColumn column">
                     <ItemTemplate>
                         <%#Eval("DateTime_Create") %>

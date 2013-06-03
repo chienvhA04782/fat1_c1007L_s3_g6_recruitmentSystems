@@ -56,7 +56,7 @@
     </Compile>
     <Compile Include="EmailsProcess.cs" />
     <Compile Include="Encryption.cs" />
-    <Compile Include="Interviewer.cs">
+    <Compile Include="Interview.cs">
       <DependentUpon>Recruitment.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

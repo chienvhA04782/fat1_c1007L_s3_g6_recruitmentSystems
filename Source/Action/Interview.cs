@@ -4,7 +4,7 @@ using Share;
 
 namespace Action
 {
-    public class Interviewer
+    public class Interview
     {
         /// <summary>
         /// Creates the inter viewer.
@@ -38,7 +38,6 @@ namespace Action
                     var newschedule = new Share.Schedule();
                     newschedule.Schedule_Date = dateInterViewer;
                     newschedule.DateTime_Create = DateTime.Now.ToString();
-                    newschedule.Admin_Id = Admin.IdAmin;
                     db.Schedules.Add(newschedule);
                     db.SaveChanges();
 

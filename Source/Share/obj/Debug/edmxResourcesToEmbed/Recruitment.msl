@@ -1,63 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RecruitmentModelStoreContainer" CdmEntityContainer="RecruitmentEntities">
-    <EntitySetMapping Name="Admins">
-      <EntityTypeMapping TypeName="RecruitmentModel.Admin">
-        <MappingFragment StoreEntitySet="Admin">
-          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
-          <ScalarProperty Name="Admin_FullName" ColumnName="Admin_FullName" />
-          <ScalarProperty Name="Admin_Account" ColumnName="Admin_Account" />
-          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
-          <ScalarProperty Name="Admin_Status" ColumnName="Admin_Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Interviewers">
-      <EntityTypeMapping TypeName="RecruitmentModel.Interviewer">
-        <MappingFragment StoreEntitySet="Interviewer">
-          <ScalarProperty Name="Interviewer_Id" ColumnName="Interviewer_Id" />
-          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
-          <ScalarProperty Name="Interviewer_Status" ColumnName="Interviewer_Status" />
-          <ScalarProperty Name="Interviewer_Result" ColumnName="Interviewer_Result" />
-          <ScalarProperty Name="Interviewer_Note" ColumnName="Interviewer_Note" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Vacancys">
-      <EntityTypeMapping TypeName="RecruitmentModel.Vacancy">
-        <MappingFragment StoreEntitySet="Vacancys">
-          <ScalarProperty Name="Vacancy_Skill" ColumnName="Vacancy_Skill" />
-          <ScalarProperty Name="Vacancy_Status" ColumnName="Vacancy_Status" />
-          <ScalarProperty Name="Vacancy_TimeInterViewer" ColumnName="Vacancy_TimeInterViewer" />
-          <ScalarProperty Name="Vacancy_DateInterViewer" ColumnName="Vacancy_DateInterViewer" />
-          <ScalarProperty Name="Vacancy_DateUp" ColumnName="Vacancy_DateUp" />
-          <ScalarProperty Name="Vacancy_DateEnd" ColumnName="Vacancy_DateEnd" />
-          <ScalarProperty Name="Vacancy_DateStart" ColumnName="Vacancy_DateStart" />
-          <ScalarProperty Name="Vacancy_Description" ColumnName="Vacancy_Description" />
-          <ScalarProperty Name="Vacancy_Age" ColumnName="Vacancy_Age" />
-          <ScalarProperty Name="Vacancy_Gender" ColumnName="Vacancy_Gender" />
-          <ScalarProperty Name="Vacancy_Exp" ColumnName="Vacancy_Exp" />
-          <ScalarProperty Name="Vacancy_NumberPeople" ColumnName="Vacancy_NumberPeople" />
-          <ScalarProperty Name="Vacancy_Positions" ColumnName="Vacancy_Positions" />
-          <ScalarProperty Name="Vacancy_Salary" ColumnName="Vacancy_Salary" />
-          <ScalarProperty Name="Vacancy_TypeTime" ColumnName="Vacancy_TypeTime" />
-          <ScalarProperty Name="Vacancy_WorkAddress" ColumnName="Vacancy_WorkAddress" />
-          <ScalarProperty Name="Vacancy_Name" ColumnName="Vacancy_Name" />
-          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
-          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Schedules">
-      <EntityTypeMapping TypeName="RecruitmentModel.Schedule">
-        <MappingFragment StoreEntitySet="Schedule">
-          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
-          <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
-          <ScalarProperty Name="DateTime_Create" ColumnName="DateTime_Create" />
-          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Applicants">
       <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
         <MappingFragment StoreEntitySet="Applicant">
@@ -74,6 +17,64 @@
           <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
           <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
           <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Interviews">
+      <EntityTypeMapping TypeName="RecruitmentModel.Interview">
+        <MappingFragment StoreEntitySet="Interview">
+          <ScalarProperty Name="Interviewer_Note" ColumnName="Interviewer_Note" />
+          <ScalarProperty Name="Interviewer_Result" ColumnName="Interviewer_Result" />
+          <ScalarProperty Name="Interviewer_Status" ColumnName="Interviewer_Status" />
+          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+          <ScalarProperty Name="Interviewer_Id" ColumnName="Interviewer_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacancys">
+      <EntityTypeMapping TypeName="RecruitmentModel.Vacancy">
+        <MappingFragment StoreEntitySet="Vacancys">
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+          <ScalarProperty Name="Vacancy_Status" ColumnName="Vacancy_Status" />
+          <ScalarProperty Name="Vacancy_TimeInterViewer" ColumnName="Vacancy_TimeInterViewer" />
+          <ScalarProperty Name="Vacancy_DateInterViewer" ColumnName="Vacancy_DateInterViewer" />
+          <ScalarProperty Name="Vacancy_DateUp" ColumnName="Vacancy_DateUp" />
+          <ScalarProperty Name="Vacancy_DateEnd" ColumnName="Vacancy_DateEnd" />
+          <ScalarProperty Name="Vacancy_DateStart" ColumnName="Vacancy_DateStart" />
+          <ScalarProperty Name="Vacancy_Description" ColumnName="Vacancy_Description" />
+          <ScalarProperty Name="Vacancy_Age" ColumnName="Vacancy_Age" />
+          <ScalarProperty Name="Vacancy_Gender" ColumnName="Vacancy_Gender" />
+          <ScalarProperty Name="Vacancy_Exp" ColumnName="Vacancy_Exp" />
+          <ScalarProperty Name="Vacancy_Skill" ColumnName="Vacancy_Skill" />
+          <ScalarProperty Name="Vacancy_NumberPeople" ColumnName="Vacancy_NumberPeople" />
+          <ScalarProperty Name="Vacancy_Positions" ColumnName="Vacancy_Positions" />
+          <ScalarProperty Name="Vacancy_Salary" ColumnName="Vacancy_Salary" />
+          <ScalarProperty Name="Vacancy_TypeTime" ColumnName="Vacancy_TypeTime" />
+          <ScalarProperty Name="Vacancy_WorkAddress" ColumnName="Vacancy_WorkAddress" />
+          <ScalarProperty Name="Vacancy_Name" ColumnName="Vacancy_Name" />
+          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="RecruitmentModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="Admin_Status" ColumnName="Admin_Status" />
+          <ScalarProperty Name="Admin_Role" ColumnName="Admin_Role" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_Account" ColumnName="Admin_Account" />
+          <ScalarProperty Name="Admin_FullName" ColumnName="Admin_FullName" />
+          <ScalarProperty Name="Admin_Id" ColumnName="Admin_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="RecruitmentModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
+          <ScalarProperty Name="DateTime_Create" ColumnName="DateTime_Create" />
+          <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

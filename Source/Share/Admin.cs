@@ -16,15 +16,16 @@ namespace Share
     {
         public Admin()
         {
-            this.Schedules = new HashSet<Schedule>();
+            this.Vacancys = new HashSet<Vacancy>();
         }
     
         public int Admin_Id { get; set; }
         public string Admin_FullName { get; set; }
         public string Admin_Account { get; set; }
         public string Admin_Password { get; set; }
+        public string Admin_Role { get; set; }
         public Nullable<bool> Admin_Status { get; set; }
     
-        public virtual ICollection<Schedule> Schedules { get; set; }
+        public virtual ICollection<Vacancy> Vacancys { get; set; }
     }
 }

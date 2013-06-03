@@ -91,10 +91,23 @@ function validateAddnewVacancys() {
 }
 
 function viewApplicantInVacancys(id) {
-   
+
 }
 
 function closeSchedulePanel() {
-    $('#panelCreateInterviewer').hide();
+    $('#panelCreateInterviewer').css('visibility', 'hidden');
     $('#mask').remove();
+}
+
+function validate_CreateInterView() {
+    if ($('#ctl00_ContentPlaceHolder1_RadDatePicker_DateInter_dateInput').val() == "") {
+        $('#ctl00_ContentPlaceHolder1_RadDatePicker_DateInter_dateInput').css('background-color', 'red');
+        return false;
+    } else if ($('#ctl00_ContentPlaceHolder1_RadTimePicker_TimeInter_dateInput').val() == "") {
+        $('#ctl00_ContentPlaceHolder1_RadTimePicker_TimeInter_dateInput').css('background-color', 'red');
+        return false;
+    } else {
+        $('#mask').remove();
+        return true;
+    }
 }

@@ -1,5 +1,6 @@
-﻿using System;
-using System.Web.Services;
+﻿
+using System;
+using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using Action;
 
@@ -10,14 +11,21 @@ namespace Recruitment.Dashboard.Controls.Vacancy
     /// </summary>
     public partial class Index : System.Web.UI.Page
     {
-        private readonly Action.Vacancys _vacancy = new Action.Vacancys();
-        private readonly Action.Applicant _applicant = new Applicant();
+        private readonly Vacancys _vacancy = new Vacancys();
+        private readonly Applicant _applicant = new Applicant();
         private readonly Action.Schedule _schedule = new Action.Schedule();
         protected int Count = 1;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             FetchAllListVancancys();
+
+            // bin data for dropdownlist interviewer
+            dropdownListInterviewer.DataSource = FetchListRoleInterviewer();
+
+            dropdownListInterviewer.DataTextField = "Admin_Account";
+            dropdownListInterviewer.DataValueField = "Admin_Id";
+            dropdownListInterviewer.DataBind();
         }
 
         /// <summary>
@@ -99,14 +107,31 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         /// Filters the vacancys by schedule.
         /// </summary>
         /// <returns></returns>
-        public string FilterVacancysHaveOrNotByvacancyId(int vacancyId, int scheduleId)
+        public string FilterVacancysHaveOrNotByvacancyId(int vacancyId, int scheduleId, int adminId)
         {
             ResultVacancysBySchedule = FetchScheduleIdByVacancysId(vacancyId);
             if (ResultVacancysBySchedule == 0)
             {
                 return "<span class='label'>not scheduling" + "</span>";
             }
-            return FetchDateScheduleByScheduleId(scheduleId);
+            return FetchDateScheduleByScheduleId(scheduleId) + ""
+                + FetchTimeOnlyByVacancyId(vacancyId) + FetchUserNameAdminByAdminId(adminId);
+        }
+
+        public string FetchUserNameAdminByAdminId(int adminId)
+        {
+            var admin = new Admin();
+            return "&nbsp;[<a style='color:#205D80' href='#'>" + admin.FetchUserNameAdminByAdminId(adminId) + "</a>]";
+        }
+
+        /// <summary>
+        /// Fetches the time only by vacancy id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        /// <returns></returns>
+        public string FetchTimeOnlyByVacancyId(int vacancysId)
+        {
+            return _vacancy.FetchTimeOnlyByVacancyId(vacancysId);
         }
 
         /// <summary>
@@ -172,7 +197,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         /// <param name="dateInterViewer">The date inter viewer.</param>
         public void CreateInterViewer(Share.Vacancy vacancys, string dateInterViewer)
         {
-            var interviewer = new Action.Interviewer();
+            var interviewer = new Action.Interview();
             interviewer.CreateInterViewer(vacancys, dateInterViewer);
         }
 
@@ -200,12 +225,58 @@ namespace Recruitment.Dashboard.Controls.Vacancy
             var vacancys = new Share.Vacancy
                 {
                     Vacancy_Id = _idVacancys,
-                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString(),
-                    Vacancy_TimeInterViewer = RadTimePicker_TimeInter.SelectedDate.ToString()
+                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", ""),
+                    Vacancy_TimeInterViewer = RadTimePicker_TimeInter.SelectedTime.ToString(),
+                    Admin_Id = dropdownListInterviewer.SelectedIndex
                 };
 
-            CreateInterViewer(vacancys, RadDatePicker_DateInter.SelectedDate.ToString());
+            CreateInterViewer(vacancys, RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", ""));
             panelCreateInterviewer.Visible = false;
+
+            // reload datasource
+            FetchAllListVancancys();
+        }
+
+        /// <summary>
+        /// Handles the Click event of the hidePanelCreateInter control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        protected void hidePanelCreateInter_Click(object sender, EventArgs e)
+        {
+            panelCreateInterviewer.Visible = false;
+        }
+
+        /// <summary>
+        /// Fetches the list role interviewer.
+        /// </summary>
+        /// <returns></returns>
+        public List<Share.Admin> FetchListRoleInterviewer()
+        {
+            var admin = new Admin();
+            return admin.FetchListRoleInterviewer();
+        }
+
+        /// <summary>
+        /// Deletes the vacancys by vacancys id.
+        /// </summary>
+        /// <param name="vacancysId">The vacancys id.</param>
+        public void DeleteVacancysByVacancysId(int vacancysId)
+        {
+            _vacancy.DeleteVacancysByVacancysId(vacancysId);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the lbtnRemove control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        public void lbtnRemove_Click(object sender, EventArgs e)
+        {
+            var lbtn = (LinkButton)sender;
+            DeleteVacancysByVacancysId(Convert.ToInt32(lbtn.CommandArgument));
+            // reload
+            FetchAllListVancancys();
         }
     }
 }

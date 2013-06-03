@@ -247,6 +247,15 @@ namespace Recruitment.Dashboard.Controls.Vacancy {
         protected global::Telerik.Web.UI.RadTimePicker RadTimePicker_TimeInter;
         
         /// <summary>
+        /// dropdownListInterviewer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropdownListInterviewer;
+        
+        /// <summary>
         /// btnCreateInterViewer control.
         /// </summary>
         /// <remarks>

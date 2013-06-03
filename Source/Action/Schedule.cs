@@ -16,7 +16,7 @@ namespace Action
             try
             {
                 var db = new RecruitmentEntities();
-                List<Share.Schedule> listSchedule = (from c in db.Schedules select c).ToList();
+                List<Share.Schedule> listSchedule = (from c in db.Schedules orderby c.Schedule_Id descending select c).ToList();
                 return listSchedule;
             }
             catch (Exception e)
@@ -38,6 +38,7 @@ namespace Action
                 var db = new RecruitmentEntities();
                 return
                     (from c in db.Schedules where c.Schedule_Id == scheduleId select c.Schedule_Date).FirstOrDefault();
+
             }
             catch (Exception e)
             {
