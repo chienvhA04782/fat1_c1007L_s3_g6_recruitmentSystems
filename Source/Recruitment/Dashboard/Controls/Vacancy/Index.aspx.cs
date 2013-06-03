@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Services;
+using System.Web.UI.WebControls;
 using Action;
 
 namespace Recruitment.Dashboard.Controls.Vacancy
@@ -123,14 +124,13 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         /// </summary>
         /// <param name="vacancyId">The vacancy id.</param>
         /// <returns></returns>
-        public string FilterVacancysByScheduleShowCreateInterviewer(int vacancyId)
+        public bool FilterVacancysByScheduleShowCreateInterviewer(int vacancyId)
         {
             if (FetchScheduleIdByVacancysId(vacancyId) == 0)
             {
-                return "<li><a href='#' onclick='interviewerThis(" + vacancyId + ")'>Interviewer this vacancys" + "</a></li>" +
-                    "<li><a href='#' onclick='attachNewApplicant(" + vacancyId + ")'>Attach new applicant" + "</a><li>";
+                return true;
             }
-            return string.Empty;
+            return false;
         }
 
         /// <summary>
@@ -163,6 +163,49 @@ namespace Recruitment.Dashboard.Controls.Vacancy
                        + st + "</span>&nbsp;";
             }
             return string.Empty;
+        }
+
+        /// <summary>
+        /// Creates the inter viewer.
+        /// </summary>
+        /// <param name="vacancys">The vacancys.</param>
+        /// <param name="dateInterViewer">The date inter viewer.</param>
+        public void CreateInterViewer(Share.Vacancy vacancys, string dateInterViewer)
+        {
+            var interviewer = new Action.Interviewer();
+            interviewer.CreateInterViewer(vacancys, dateInterViewer);
+        }
+
+        private static int _idVacancys;
+        /// <summary>
+        /// Handles the Click event of the lbtn_IntervierThis control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        public void lbtn_IntervierThis_Click(object sender, EventArgs e)
+        {
+            panelCreateInterviewer.Visible = true;
+
+            var lbtn = (LinkButton)sender;
+            _idVacancys = Convert.ToInt32(lbtn.CommandArgument);
+        }
+
+        /// <summary>
+        /// Handles the Click event of the btnCreateInterViewer control.
+        /// </summary>
+        /// <param name="sendr">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
+        protected void btnCreateInterViewer_Click(object sendr, EventArgs e)
+        {
+            var vacancys = new Share.Vacancy
+                {
+                    Vacancy_Id = _idVacancys,
+                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString(),
+                    Vacancy_TimeInterViewer = RadTimePicker_TimeInter.SelectedDate.ToString()
+                };
+
+            CreateInterViewer(vacancys, RadDatePicker_DateInter.SelectedDate.ToString());
+            panelCreateInterviewer.Visible = false;
         }
     }
 }

@@ -71,7 +71,18 @@
                                 <span class="caret"></span>
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>
+                                        <li>
+                                            <asp:LinkButton ID="lbtn_IntervierThis" runat="server" OnClientClick="ViewApplicantInInterViewer();"
+                                                Visible='<%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>' CommandArgument='<%#Eval("Vacancy_Id")%>'
+                                                 OnClick="lbtn_IntervierThis_Click">
+                                                Interviewer this vacancys
+                                            </asp:LinkButton>
+                                        </li>
+                                        <li>
+                                            <asp:LinkButton ID="LinkButton2" runat="server" Visible='<%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>'>
+                                                Attach new applicant
+                                            </asp:LinkButton>
+                                        </li>
                                         <li><a href="#">Edit</a></li>
                                         <li><a href="#">Remove</a></li>
                                     </ul>
@@ -205,10 +216,44 @@
                             <tr>
                                 <td colspan="2" style="text-align: right">
                                     <asp:LinkButton ID="lbtnSubmitAddnew" runat="server" CssClass="btn"
-                                        OnClick="lbtnSubmitAddnew_Click" OnClientClick="return validateAddnewVacancys();">Submit</asp:LinkButton>
+                                        OnClick="lbtnSubmitAddnew_Click" OnClientClick="return validateAddnewVacancys();">
+                                        Submit
+                                    </asp:LinkButton>
                                 </td>
                             </tr>
                         </table>
+                    </div>
+                </div>
+            </asp:Panel>
+            <%--interviewer panel--%>
+            <asp:Panel runat="server" ID="panelCreateInterviewer" ClientIDMode="Static" Visible="False">
+                <div class="popup_Bar" style="width: 300px; min-height: 180px; margin-left: 300px; top: 100px">
+                    <div class="topBar">
+                        <strong>Schedule</strong>
+                        <div class="setting-Close" onclick="closeSchedulePanel();">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="boxApplicantUpdate">
+                        <table style="width: 100%">
+                            <tr style="border: none">
+                                <td style="border: none">Date
+                                </td>
+                                <td style="border: none">
+                                    <telerik:RadDatePicker ID="RadDatePicker_DateInter" runat="server"></telerik:RadDatePicker>
+                                </td>
+                            </tr>
+                            <tr style="border: none">
+                                <td>Time
+                                </td>
+                                <td>
+                                    <telerik:RadTimePicker ID="RadTimePicker_TimeInter" runat="server"></telerik:RadTimePicker>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="text-align: right; padding-right: 10px">
+                        <asp:Button ID="btnCreateInterViewer" runat="server" Text="Create" CssClass="btn" OnClick="btnCreateInterViewer_Click" />
                     </div>
                 </div>
             </asp:Panel>

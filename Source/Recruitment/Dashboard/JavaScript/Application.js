@@ -93,3 +93,8 @@ function validateAddnewVacancys() {
 function viewApplicantInVacancys(id) {
    
 }
+
+function closeSchedulePanel() {
+    $('#panelCreateInterviewer').hide();
+    $('#mask').remove();
+}

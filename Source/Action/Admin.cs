@@ -26,5 +26,7 @@ namespace Action
                 return string.Empty;
             }
         }
+
+        public static int IdAmin = 1;
     }
 }
