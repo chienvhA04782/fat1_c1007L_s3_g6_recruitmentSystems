@@ -27,6 +27,7 @@ namespace Action
 
                         va.Schedule_Id = schedule.Schedule_Id;
                         va.Vacancy_TimeInterViewer = vacancys.Vacancy_TimeInterViewer;
+                        va.Admin_Id = vacancys.Admin_Id;
                         va.Vacancy_Status = "Waiting";
                         db.SaveChanges();
 
@@ -49,6 +50,7 @@ namespace Action
                     {
                         va.Schedule_Id = newschedule.Schedule_Id;
                         va.Vacancy_TimeInterViewer = vacancys.Vacancy_TimeInterViewer;
+                        va.Admin_Id = vacancys.Admin_Id;
                         va.Vacancy_Status = "Waiting";
                     }
                     db.SaveChanges();
@@ -69,7 +71,7 @@ namespace Action
         /// </summary>
         private void SenEmailForConfirm(int vacancysId)
         {
-            var  email = new EmailsProcess();
+            var email = new EmailsProcess();
             var db = new RecruitmentEntities();
             List<Share.Applicant> applicant =
                 (from c in db.Applicants where c.Vacancy_Id == vacancysId select c).ToList();

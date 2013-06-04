@@ -31,6 +31,14 @@
 
                         </ItemTemplate>
                     </telerik:GridTemplateColumn>
+                    <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Status" UniqueName="TemplateColumn">
+                        <ItemTemplate>
+                            <asp:Panel ID="pnAdminConfirm" runat="server" Visible='<%#FetchStatusApplicantByApplicantId(Convert.ToInt32(Eval("Applicant_Id"))) %>'>
+                                <asp:LinkButton ID="lbtnAdminConfirm" runat="server" OnClick="lbtnAdminConfirm_Click"
+                                     CommandArgument='<%#Eval("Applicant_Id")%>' ForeColor="#dc2606" OnClientClick="if(confirm('are you sure confirm this applicant?')){return true;}return false;">Confirm</asp:LinkButton>
+                            </asp:Panel>
+                        </ItemTemplate>
+                    </telerik:GridTemplateColumn>
                     <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Fone Number" UniqueName="TemplateColumn">
                         <ItemTemplate>
                             <%#Eval("Applicant_FoneNumber")%>

@@ -205,5 +205,24 @@ namespace Action
                 Console.Write(e);
             }
         }
+
+        /// <summary>
+        /// Confirms the applicant by applicant id.
+        /// </summary>
+        public void ConfirmApplicantByApplicantId(int applicantId)
+        {
+            try
+            {
+                var db = new RecruitmentEntities();
+                Share.Applicant app =
+                    (from c in db.Applicants where c.Applicant_Id == applicantId select c).FirstOrDefault();
+                if (app != null) app.Applicant_Admin_Accept = "true";
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+            }
+        }
     }
 }
