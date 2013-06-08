@@ -340,5 +340,23 @@ namespace Action
                 Console.Write(e);
             }
         }
+
+        /// <summary>
+        /// Fetches the vacancys by interviewer id.
+        /// </summary>
+        /// <returns></returns>
+        public List<Share.Vacancy> FetchVacancysByInterviewerId()
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                return (from c in db.Vacancys where c.Admin_Id == Admin.IdAmin select c).ToList();
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return null;
+            }
+        } 
     }
 }

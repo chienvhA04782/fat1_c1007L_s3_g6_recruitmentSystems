@@ -24,7 +24,7 @@ namespace Recruitment.Dashboard
                 }
                 else if (sRole.Trim().Equals("Interview"))
                 {
-                    Response.Redirect("/Dashboard/Controls/Schedule/Index.aspx");
+                    Response.Redirect("/Dashboard/Controls/Schedule/Vacancys.aspx");
                 }
             }
         }

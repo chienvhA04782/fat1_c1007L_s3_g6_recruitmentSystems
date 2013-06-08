@@ -24,21 +24,43 @@ namespace Recruitment.Dashboard.Controls.Schedule
         /// <param name="e">The <see cref="EventArgs" /> instance containing the event data.</param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["ViewsId"] != null)
+            if (Action.Admin.RoleAdmin.Trim().Equals("Interview"))
             {
-                try
+                RdBridViewVacancyss.DataSource = FetchVacancysByInterviewerId();
+                RdBridViewVacancyss.DataBind();
+            }
+            else if (Action.Admin.RoleAdmin.Trim().Equals("Admin"))
+            {
+                if (Request.QueryString["ViewsId"] != null)
                 {
-                    _viewsId = Convert.ToInt32(Request.QueryString["ViewsId"]);
-                    DisplayAllVacancysBySchedule(_viewsId);
-                    // set date
-                    Label_DateVacancys.Text = FetchDateScheduleByScheduleId(_viewsId);
-                }
-                catch (Exception ex)
-                {
-                    Console.Write(ex);
+                    try
+                    {
+                        _viewsId = Convert.ToInt32(Request.QueryString["ViewsId"]);
+                        DisplayAllVacancysBySchedule(_viewsId);
+                        // set date
+                        Label_DateVacancys.Text = FetchDateScheduleByScheduleId(_viewsId);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Write(ex);
+                    }
                 }
             }
         }
+
+        /// <summary>
+        /// Fetches the vacancys by interviewer id.
+        /// </summary>
+        /// <returns></returns>
+        public List<Share.Vacancy> FetchVacancysByInterviewerId()
+        {
+            return _vacancy.FetchVacancysByInterviewerId();
+        }
+
+        /// <summary>
+        /// Displays all vacancys by schedule.
+        /// </summary>
+        /// <param name="viewId">The view id.</param>
         private void DisplayAllVacancysBySchedule(int viewId)
         {
             RdBridViewVacancyss.DataSource =

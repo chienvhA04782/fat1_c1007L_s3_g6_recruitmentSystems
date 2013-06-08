@@ -13,5 +13,12 @@ namespace Recruitment.Dashboard
         {
 
         }
+
+        protected void btn_logout_Click(object sender, EventArgs e)
+        {
+            Action.Admin.IdAmin = 0;
+            Action.Admin.RoleAdmin = string.Empty;
+            Response.Redirect("/Dashboard/Login.aspx");
+        }
     }
 }

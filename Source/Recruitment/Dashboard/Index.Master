@@ -25,7 +25,7 @@
                 <div class="span12 topbarFix">
                     <section class="Rheader">
                         <div class="outLog" style="position: absolute; right: 10px; top: 10px">
-                            <asp:Button ID="btn_logout" CssClass="btn" runat="server" Text="Logout" />
+                            <asp:Button ID="btn_logout" CssClass="btn" runat="server" Text="Logout" OnClick="btn_logout_Click" />
                         </div>
                     </section>
                 </div>
