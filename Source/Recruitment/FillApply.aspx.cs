@@ -13,6 +13,18 @@ namespace Recruitment
             {
                 _idva = Convert.ToInt32(Request.QueryString["vacancysId"]);
             }
+            if (!string.IsNullOrEmpty(Request.QueryString["status"]))
+            {
+                if (Request.QueryString["status"].Trim().Equals("3"))
+                {
+                    lblStatus.Text = "<script>alert('SUCESSFULLY! thank you for apply you cv. well contact through you email');" +
+          "</script>";
+                }
+                else
+                {
+                    lblStatus.Text = "<Script>alert('ERROR' Please try again!);" + "</script>";
+                }
+            }
         }
 
         /// <summary>
@@ -20,49 +32,37 @@ namespace Recruitment
         /// </summary>
         /// <param name="applicants">The applicants.</param>
         /// <returns></returns>
-        public int CreateApplicantByVacancysId(Share.Applicant applicants)
+        public bool CreateApplicantByVacancysId(Share.Applicant applicants)
         {
             return _applicant.CreateApplicantByVacancysId(applicants);
         }
 
         protected void btnCreateApplicant_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (FileUpload1.HasFile)
+
+            var applicantCreate = new Share.Applicant
                 {
-                    var applicantCreate = new Share.Applicant
-                        {
-                            Applicant_FullName = txtFullname.Text,
-                            Applicant_FoneNumber = txtNumber.Text,
-                            Applicant_Email = txtEmail.Text,
-                            Applicant_Address = txtaddress.Text,
-                            Vacancy_Id = _idva,
-                            Applicant_Admin_Accept = "false",
-                            Applicant_Client_Confirm = "false"
-                        };
+                    Applicant_FullName = txtFullname.Text,
+                    Applicant_FoneNumber = txtNumber.Text,
+                    Applicant_Email = txtEmail.Text,
+                    Applicant_Address = txtaddress.Text,
+                    Vacancy_Id = _idva,
+                    Applicant_Admin_Accept = "false",
+                    Applicant_Client_Confirm = "false",
+                    Skill = txtSkill.Text,
+                    PositionApply = txtPositionApply.Text,
+                    certificate = txtCertificate.Text,
+                    suggestSalary = txtSalary.Text
+                };
 
-                    // create
-                    int idnew = CreateApplicantByVacancysId(applicantCreate);
-
-                    string path = Server.MapPath("~/Data_CV/" + idnew + "_" + FileUpload1.FileName);
-                    FileUpload1.SaveAs(path);
-
-                    var appliUpdate = new Share.Applicant();
-                    appliUpdate.Applicant_CVPath = "~/Data_CV/" + idnew + "_" + FileUpload1.FileName;
-
-                    // update
-                    _applicant.UpdateApplicantAfterCreate(idnew, appliUpdate);
-                    Console.Write(
-                        "<Script>alert('thank you ! we will check and send schedule interviewer to you email provider');" +
-                        "</script>");
-                }
-            }
-            catch (Exception ex)
+            // create
+            if (CreateApplicantByVacancysId(applicantCreate))
             {
-                Console.Write(
-                       "<Script>alert('ERROR' Please try again!);" +
-                       "</script>");
+                Response.Redirect("FillApply.aspx?status=3");
+            }
+            else
+            {
+                Response.Redirect("FillApply.aspx?status=1"); 
             }
         }
     }

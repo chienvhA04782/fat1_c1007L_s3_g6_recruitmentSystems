@@ -25,10 +25,10 @@ namespace Share
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Applicant> Applicants { get; set; }
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<Vacancy> Vacancys { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Applicant> Applicants { get; set; }
     }
 }

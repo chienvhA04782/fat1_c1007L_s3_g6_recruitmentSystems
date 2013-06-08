@@ -48,7 +48,10 @@
           <Property Name="Applicant_FullName" Type="nvarchar" MaxLength="50" />
           <Property Name="Applicant_FoneNumber" Type="nvarchar" MaxLength="50" />
           <Property Name="Applicant_Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Applicant_CVPath" Type="nvarchar" MaxLength="200" />
+          <Property Name="Skill" Type="ntext" />
+          <Property Name="PositionApply" Type="nvarchar" MaxLength="50" />
+          <Property Name="certificate" Type="ntext" />
+          <Property Name="suggestSalary" Type="nvarchar" MaxLength="50" />
           <Property Name="Applicant_Address" Type="nvarchar" MaxLength="50" />
           <Property Name="Applicant_IP" Type="nvarchar" MaxLength="50" />
           <Property Name="Applicant_Desription" Type="ntext" />
@@ -153,13 +156,8 @@
     <edmx:ConceptualModels>
       <Schema Namespace="RecruitmentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="RecruitmentEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Applicants" EntityType="RecruitmentModel.Applicant" />
           <EntitySet Name="Interviews" EntityType="RecruitmentModel.Interview" />
           <EntitySet Name="Vacancys" EntityType="RecruitmentModel.Vacancy" />
-          <AssociationSet Name="FK_Applicant_Vacancys" Association="RecruitmentModel.FK_Applicant_Vacancys">
-            <End Role="Vacancy" EntitySet="Vacancys" />
-            <End Role="Applicant" EntitySet="Applicants" />
-          </AssociationSet>
           <EntitySet Name="Admins" EntityType="RecruitmentModel.Admin" />
           <EntitySet Name="Schedules" EntityType="RecruitmentModel.Schedule" />
           <AssociationSet Name="FK_Vacancys_Admin" Association="RecruitmentModel.FK_Vacancys_Admin">
@@ -174,26 +172,12 @@
             <End Role="Schedule" EntitySet="Schedules" />
             <End Role="Vacancy" EntitySet="Vacancys" />
           </AssociationSet>
+          <EntitySet Name="Applicants" EntityType="RecruitmentModel.Applicant" />
+          <AssociationSet Name="FK_Applicant_Vacancys" Association="RecruitmentModel.FK_Applicant_Vacancys">
+            <End Role="Vacancy" EntitySet="Vacancys" />
+            <End Role="Applicant" EntitySet="Applicants" />
+          </AssociationSet>
           </EntityContainer>
-        <EntityType Name="Applicant">
-          <Key>
-            <PropertyRef Name="Applicant_Id" />
-          </Key>
-          <Property Type="Int32" Name="Applicant_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Vacancy_Id" />
-          <Property Type="String" Name="Applicant_FullName" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_FoneNumber" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_Email" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_CVPath" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_Address" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_IP" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_Desription" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_DateRegister" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Applicant_Admin_Accept" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Type="String" Name="Applicant_Result" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Type="String" Name="Applicant_Client_Confirm" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Vacancy" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Applicant" ToRole="Vacancy" />
-        </EntityType>
         <EntityType Name="Interview">
           <Key>
             <PropertyRef Name="Interviewer_Id" />
@@ -229,22 +213,10 @@
           <Property Type="String" Name="Vacancy_TimeInterViewer" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="Vacancy_Status" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Admin_Id" />
-          <NavigationProperty Name="Applicants" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Vacancy" ToRole="Applicant" />
           <NavigationProperty Name="Admin" Relationship="RecruitmentModel.FK_Vacancys_Admin" FromRole="Vacancy" ToRole="Admin" />
           <NavigationProperty Name="Schedule" Relationship="RecruitmentModel.FK_Vacancys_Schedule" FromRole="Vacancy" ToRole="Schedule" />
+          <NavigationProperty Name="Applicants" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Vacancy" ToRole="Applicant" />
         </EntityType>
-        <Association Name="FK_Applicant_Vacancys">
-          <End Type="RecruitmentModel.Vacancy" Role="Vacancy" Multiplicity="0..1" />
-          <End Type="RecruitmentModel.Applicant" Role="Applicant" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Vacancy">
-              <PropertyRef Name="Vacancy_Id" />
-            </Principal>
-            <Dependent Role="Applicant">
-              <PropertyRef Name="Vacancy_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Admin">
           <Key>
             <PropertyRef Name="Admin_Id" />
@@ -303,31 +275,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Applicant">
+          <Key>
+            <PropertyRef Name="Applicant_Id" />
+          </Key>
+          <Property Type="Int32" Name="Applicant_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Vacancy_Id" />
+          <Property Type="String" Name="Applicant_FullName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_FoneNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_Email" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Skill" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PositionApply" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="certificate" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="suggestSalary" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_Address" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_IP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_Desription" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_DateRegister" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Applicant_Admin_Accept" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Applicant_Result" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Applicant_Client_Confirm" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Vacancy" Relationship="RecruitmentModel.FK_Applicant_Vacancys" FromRole="Applicant" ToRole="Vacancy" />
+        </EntityType>
+        <Association Name="FK_Applicant_Vacancys">
+          <End Type="RecruitmentModel.Vacancy" Role="Vacancy" Multiplicity="0..1" />
+          <End Type="RecruitmentModel.Applicant" Role="Applicant" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vacancy">
+              <PropertyRef Name="Vacancy_Id" />
+            </Principal>
+            <Dependent Role="Applicant">
+              <PropertyRef Name="Vacancy_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="RecruitmentModelStoreContainer" CdmEntityContainer="RecruitmentEntities">
-          <EntitySetMapping Name="Applicants">
-            <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
-              <MappingFragment StoreEntitySet="Applicant">
-                <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
-                <ScalarProperty Name="Applicant_Result" ColumnName="Applicant_Result" />
-                <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
-                <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
-                <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
-                <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
-                <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
-                <ScalarProperty Name="Applicant_CVPath" ColumnName="Applicant_CVPath" />
-                <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
-                <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
-                <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
-                <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
-                <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Interviews">
             <EntityTypeMapping TypeName="RecruitmentModel.Interview">
               <MappingFragment StoreEntitySet="Interview">
@@ -383,6 +370,28 @@
                 <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
                 <ScalarProperty Name="DateTime_Create" ColumnName="DateTime_Create" />
                 <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applicants">
+            <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
+              <MappingFragment StoreEntitySet="Applicant">
+                <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
+                <ScalarProperty Name="Applicant_Result" ColumnName="Applicant_Result" />
+                <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
+                <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
+                <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
+                <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
+                <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
+                <ScalarProperty Name="suggestSalary" ColumnName="suggestSalary" />
+                <ScalarProperty Name="certificate" ColumnName="certificate" />
+                <ScalarProperty Name="PositionApply" ColumnName="PositionApply" />
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
+                <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
+                <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
+                <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+                <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

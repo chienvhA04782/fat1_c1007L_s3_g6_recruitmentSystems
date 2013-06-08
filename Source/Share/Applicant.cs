@@ -19,7 +19,10 @@ namespace Share
         public string Applicant_FullName { get; set; }
         public string Applicant_FoneNumber { get; set; }
         public string Applicant_Email { get; set; }
-        public string Applicant_CVPath { get; set; }
+        public string Skill { get; set; }
+        public string PositionApply { get; set; }
+        public string certificate { get; set; }
+        public string suggestSalary { get; set; }
         public string Applicant_Address { get; set; }
         public string Applicant_IP { get; set; }
         public string Applicant_Desription { get; set; }

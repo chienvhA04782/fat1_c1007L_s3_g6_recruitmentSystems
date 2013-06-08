@@ -129,13 +129,13 @@
     <Content Include="Dashboard\Css\TemplateMaster.css" />
     <Content Include="Dashboard\Index.aspx" />
     <Content Include="Dashboard\JavaScript\Application.js" />
+    <Content Include="Dashboard\Login.aspx" />
     <Content Include="FillApply.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="JavaScript\functions.js" />
     <Content Include="JavaScript\jquery-1.8.0.min.js" />
     <Content Include="JavaScript\jquery.carouFredSel-5.5.0-packed.js" />
     <Content Include="JavaScript\modernizr.custom.js" />
-    <Content Include="Login.aspx" />
     <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Plugin\Bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="Plugin\Bootstrap\css\bootstrap.css" />
@@ -151,6 +151,7 @@
     <Content Include="Plugin\FontFamily\Helvetical\Thin\2e309b1b-08b8-477f-bc9e-7067cf0af0b3.svg" />
     <Content Include="Plugin\jquery-2.0.0.min.js" />
     <Content Include="Plugin\jquery.session.js" />
+    <Content Include="Plugin\style.css" />
     <Content Include="Plugin\Telerik\Telerik.Web.Design.dll" />
     <Content Include="Plugin\Telerik\Telerik.Web.UI.dll" />
     <Content Include="Plugin\Telerik\Telerik.Web.UI.Skins.dll" />
@@ -215,6 +216,13 @@
     <Compile Include="Dashboard\Index.Master.designer.cs">
       <DependentUpon>Index.Master</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FillApply.aspx.cs">
       <DependentUpon>FillApply.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,13 +243,6 @@
     </Compile>
     <Compile Include="Index.Master.designer.cs">
       <DependentUpon>Index.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewVancancys.aspx.cs">

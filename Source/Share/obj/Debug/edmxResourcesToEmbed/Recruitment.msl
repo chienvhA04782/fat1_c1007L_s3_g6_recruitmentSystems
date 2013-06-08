@@ -1,25 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="RecruitmentModelStoreContainer" CdmEntityContainer="RecruitmentEntities">
-    <EntitySetMapping Name="Applicants">
-      <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
-        <MappingFragment StoreEntitySet="Applicant">
-          <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
-          <ScalarProperty Name="Applicant_Result" ColumnName="Applicant_Result" />
-          <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
-          <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
-          <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
-          <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
-          <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
-          <ScalarProperty Name="Applicant_CVPath" ColumnName="Applicant_CVPath" />
-          <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
-          <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
-          <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
-          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
-          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Interviews">
       <EntityTypeMapping TypeName="RecruitmentModel.Interview">
         <MappingFragment StoreEntitySet="Interview">
@@ -75,6 +56,28 @@
           <ScalarProperty Name="Schedule_Date" ColumnName="Schedule_Date" />
           <ScalarProperty Name="DateTime_Create" ColumnName="DateTime_Create" />
           <ScalarProperty Name="Schedule_Id" ColumnName="Schedule_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applicants">
+      <EntityTypeMapping TypeName="RecruitmentModel.Applicant">
+        <MappingFragment StoreEntitySet="Applicant">
+          <ScalarProperty Name="Applicant_Client_Confirm" ColumnName="Applicant_Client_Confirm" />
+          <ScalarProperty Name="Applicant_Result" ColumnName="Applicant_Result" />
+          <ScalarProperty Name="Applicant_Admin_Accept" ColumnName="Applicant_Admin_Accept" />
+          <ScalarProperty Name="Applicant_DateRegister" ColumnName="Applicant_DateRegister" />
+          <ScalarProperty Name="Applicant_Desription" ColumnName="Applicant_Desription" />
+          <ScalarProperty Name="Applicant_IP" ColumnName="Applicant_IP" />
+          <ScalarProperty Name="Applicant_Address" ColumnName="Applicant_Address" />
+          <ScalarProperty Name="suggestSalary" ColumnName="suggestSalary" />
+          <ScalarProperty Name="certificate" ColumnName="certificate" />
+          <ScalarProperty Name="PositionApply" ColumnName="PositionApply" />
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="Applicant_Email" ColumnName="Applicant_Email" />
+          <ScalarProperty Name="Applicant_FoneNumber" ColumnName="Applicant_FoneNumber" />
+          <ScalarProperty Name="Applicant_FullName" ColumnName="Applicant_FullName" />
+          <ScalarProperty Name="Vacancy_Id" ColumnName="Vacancy_Id" />
+          <ScalarProperty Name="Applicant_Id" ColumnName="Applicant_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

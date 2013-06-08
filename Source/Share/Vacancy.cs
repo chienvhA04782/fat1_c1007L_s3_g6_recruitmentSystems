@@ -40,8 +40,8 @@ namespace Share
         public string Vacancy_Status { get; set; }
         public Nullable<int> Admin_Id { get; set; }
     
-        public virtual ICollection<Applicant> Applicants { get; set; }
         public virtual Admin Admin { get; set; }
         public virtual Schedule Schedule { get; set; }
+        public virtual ICollection<Applicant> Applicants { get; set; }
     }
 }

@@ -7,16 +7,21 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder3" runat="server"></asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <style>
-        table tr.info td {
-            font-size: 13px;
+        table tr td {
+            font-size: 12px;
             font-weight: normal;
+        }
+
+        .areaBox {
+            width: 100%;
         }
     </style>
     <div style="background: none repeat scroll 0 0 #F8F8F8; margin: 0 auto; padding-left: 15px; width: 70%;">
         <h2 style="font-weight: normal; font-size: 22px">Infor Applicant</h2>
+        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
         <table style="width: 600px">
             <tr>
-                <td style="width: 100px">FullName
+                <td>FullName
                 </td>
                 <td>
                     <asp:TextBox ID="txtFullname" runat="server"></asp:TextBox>
@@ -35,14 +40,13 @@
                         ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
                 </td>
             </tr>
-            <tr>
+            <tr class="info">
                 <td>Address
                 </td>
                 <td>
                     <asp:TextBox ID="txtaddress" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ForeColor="red" runat="server" ErrorMessage="(*)"
                         ControlToValidate="txtaddress">
-                        
                     </asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -58,17 +62,43 @@
                 </td>
             </tr>
             <tr>
-                <td>CV
+                <td>Skill
                 </td>
                 <td>
-                    <asp:FileUpload ID="FileUpload1" runat="server" />
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ForeColor="red" ErrorMessage="(*)" ControlToValidate="FileUpload1">
+                    <asp:TextBox CssClass="areaBox" ID="txtSkill" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator4" ForeColor="red" runat="server" ErrorMessage="(*)" ControlToValidate="txtSkill">
                     </asp:RequiredFieldValidator>
-                  <%--  <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ForeColor="red" 
-                        ControlToValidate="FileUpload1"
-                         ErrorMessage="(*File upload not valid. just alow .doc and .docx format)"
-                         ValidationExpression="^(([a-zA-Z]:)|(\\{2}\w+)\$?)(\\(\w[\w].*))+(.doc|.docx)$">
-                    </asp:RegularExpressionValidator>--%>
+                </td>
+            </tr>
+            <tr>
+                <td>Position Apply
+                </td>
+                <td>
+                    <asp:TextBox CssClass="areaBox" ID="txtPositionApply" runat="server" TextMode="MultiLine"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator6" ForeColor="red" runat="server" ErrorMessage="(*)" ControlToValidate="txtPositionApply">
+                    </asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>Certificate
+                </td>
+                <td>
+                    <asp:TextBox ID="txtCertificate" runat="server" TextMode="MultiLine" CssClass="areaBox"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator7" ForeColor="red" runat="server" ErrorMessage="(*)" ControlToValidate="txtCertificate">
+                    </asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td>Suggest Salary
+                </td>
+                <td>
+                    <asp:TextBox ID="txtSalary" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator8" ForeColor="red" runat="server" ErrorMessage="(*)" ControlToValidate="txtSalary">
+                    </asp:RequiredFieldValidator>
                 </td>
             </tr>
         </table>

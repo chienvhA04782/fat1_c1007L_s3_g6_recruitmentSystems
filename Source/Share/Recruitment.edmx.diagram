@@ -5,15 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="59d6b574e3664d778df50aae0129702a" Name="Diagram1">
-        <EntityTypeShape EntityType="RecruitmentModel.Applicant" Width="1.5" PointX="0.13154913118646905" PointY="16.679256402272383" />
         <EntityTypeShape EntityType="RecruitmentModel.Interview" Width="1.5" PointX="1.4827202546795459" PointY="11.872585361764108" />
         <EntityTypeShape EntityType="RecruitmentModel.Vacancy" Width="1.5" PointX="5.6098628386901055" PointY="0.17839665719233297" />
-        <AssociationConnector Association="RecruitmentModel.FK_Applicant_Vacancys" />
         <EntityTypeShape EntityType="RecruitmentModel.Admin" Width="1.5" PointX="9.0922699277718877" PointY="21.259260396128177" />
         <EntityTypeShape EntityType="RecruitmentModel.Schedule" Width="1.5" PointX="1.8009236239832471" PointY="26.632172671441069" />
         <AssociationConnector Association="RecruitmentModel.FK_Vacancys_Admin" />
         <AssociationConnector Association="RecruitmentModel.FK_Interviewer_Schedule" />
         <AssociationConnector Association="RecruitmentModel.FK_Vacancys_Schedule" />
+        <EntityTypeShape EntityType="RecruitmentModel.Applicant" Width="1.5" PointX="5.5421148545770507" PointY="20.181864569048333" />
+        <AssociationConnector Association="RecruitmentModel.FK_Applicant_Vacancys" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

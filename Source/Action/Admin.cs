@@ -27,7 +27,8 @@ namespace Action
             }
         }
 
-        public static int IdAmin = 1;
+        public static int IdAmin = 0;
+        public static string RoleAdmin = "";
 
         /// <summary>
         /// Fetches the list role interviewer.
@@ -45,6 +46,35 @@ namespace Action
                 Console.Write(e);
                 return null;
             }
-        } 
+        }
+
+        /// <summary>
+        /// Logins the specified admins.
+        /// </summary>
+        /// <param name="admins">The admins.</param>
+        /// <returns></returns>
+        public string Login(Share.Admin admins)
+        {
+            try
+            {
+                var db = new Share.RecruitmentEntities();
+                Share.Admin admin =
+                    (from c in db.Admins
+                     where c.Admin_Account == admins.Admin_Account & c.Admin_Password == admins.Admin_Password
+                     select c).FirstOrDefault();
+                if (admin != null)
+                {
+                    IdAmin = admin.Admin_Id;
+                    RoleAdmin = admin.Admin_Role;
+                    return admin.Admin_Role;
+                }
+                return string.Empty;
+            }
+            catch (Exception e)
+            {
+                Console.Write(e);
+                return string.Empty;
+            }
+        }
     }
 }

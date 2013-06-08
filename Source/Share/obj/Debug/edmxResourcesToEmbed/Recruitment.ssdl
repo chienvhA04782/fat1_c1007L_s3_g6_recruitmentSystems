@@ -43,7 +43,10 @@
     <Property Name="Applicant_FullName" Type="nvarchar" MaxLength="50" />
     <Property Name="Applicant_FoneNumber" Type="nvarchar" MaxLength="50" />
     <Property Name="Applicant_Email" Type="nvarchar" MaxLength="50" />
-    <Property Name="Applicant_CVPath" Type="nvarchar" MaxLength="200" />
+    <Property Name="Skill" Type="ntext" />
+    <Property Name="PositionApply" Type="nvarchar" MaxLength="50" />
+    <Property Name="certificate" Type="ntext" />
+    <Property Name="suggestSalary" Type="nvarchar" MaxLength="50" />
     <Property Name="Applicant_Address" Type="nvarchar" MaxLength="50" />
     <Property Name="Applicant_IP" Type="nvarchar" MaxLength="50" />
     <Property Name="Applicant_Desription" Type="ntext" />
