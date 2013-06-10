@@ -58,8 +58,8 @@ namespace Recruitment.Dashboard.Controls.Vacancy
                     Vacancy_Age = txtage.Text,
                     Vacancy_Description = txtDescription.Text,
                     Vacancy_DateUp = DateTime.Now.ToString(),
-                    Vacancy_DateStart = rdDate_Start.SelectedDate.ToString(),
-                    Vacancy_DateEnd = rdDate_End.SelectedDate.ToString()
+                    Vacancy_DateStart = rdDate_Start.SelectedDate.ToString().Replace("12:00:00 AM",""),
+                    Vacancy_DateEnd = rdDate_End.SelectedDate.ToString().Replace("12:00:00 AM","")
                 };
             // create
             Panel_ContentAddnew.Visible = false;
