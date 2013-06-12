@@ -225,12 +225,12 @@ namespace Recruitment.Dashboard.Controls.Vacancy
             var vacancys = new Share.Vacancy
                 {
                     Vacancy_Id = _idVacancys,
-                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", ""),
+                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", "").Replace("23:00:00",""),
                     Vacancy_TimeInterViewer = RadTimePicker_TimeInter.SelectedTime.ToString(),
-                    Admin_Id = dropdownListInterviewer.SelectedIndex
+                    Admin_Id = Convert.ToInt32(dropdownListInterviewer.SelectedValue)
                 };
 
-            CreateInterViewer(vacancys, RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", ""));
+            CreateInterViewer(vacancys, RadDatePicker_DateInter.SelectedDate.ToString().Replace("23:00:00", "").Replace("12:00:00 AM", ""));
             panelCreateInterviewer.Visible = false;
 
             // reload datasource

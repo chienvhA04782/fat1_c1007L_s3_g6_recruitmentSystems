@@ -32,7 +32,7 @@ namespace Action
                         db.SaveChanges();
 
                         // email send for confirm
-                        SenEmailForConfirm(vacancys.Vacancy_Id);
+                        SenEmailForConfirm(vacancys.Vacancy_Id, schedule, va);
                     }
                 }
                 else
@@ -52,12 +52,11 @@ namespace Action
                         va.Vacancy_TimeInterViewer = vacancys.Vacancy_TimeInterViewer;
                         va.Admin_Id = vacancys.Admin_Id;
                         va.Vacancy_Status = "Waiting";
+                        // email send for confirm
+                        SenEmailForConfirm(vacancys.Vacancy_Id, newschedule, va);
                     }
                     db.SaveChanges();
                     // update vacancys
-
-                    // email send for confirm
-                    SenEmailForConfirm(vacancys.Vacancy_Id);
                 }
             }
             catch (Exception e)
@@ -69,7 +68,7 @@ namespace Action
         /// <summary>
         /// Sens the email for confirm.
         /// </summary>
-        private void SenEmailForConfirm(int vacancysId)
+        private void SenEmailForConfirm(int vacancysId, Share.Schedule schedule, Share.Vacancy vacancys)
         {
             var email = new EmailsProcess();
             var db = new RecruitmentEntities();
@@ -77,7 +76,10 @@ namespace Action
                 (from c in db.Applicants where c.Vacancy_Id == vacancysId select c).ToList();
             foreach (var appli in applicant)
             {
-                email.Sendmail(appli.Applicant_Email);
+                // upload client client_confirm update is true because not have domain for client cofirm
+                appli.Applicant_Client_Confirm = "true";
+                db.SaveChanges();
+                email.Sendmail(appli.Applicant_Email, schedule, vacancys);
             }
         }
     }
