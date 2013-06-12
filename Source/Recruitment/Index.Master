@@ -42,8 +42,6 @@
 						<a href="#" class="nav-btn">HOME<span></span></a>
 						<ul>
 							<li class="active"><a href="Index.aspx">home</a></li>
-							<li><a href="#">about us</a></li>
-							<li><a href="#">services</a></li>
 						</ul>
 						<div class="cl">&nbsp;</div>
 					</nav>

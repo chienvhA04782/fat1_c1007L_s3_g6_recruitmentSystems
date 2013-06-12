@@ -233,7 +233,7 @@
             <asp:Panel runat="server" ID="panelCreateInterviewer" ClientIDMode="Static" Visible="False">
                 <div class="popup_Bar" style="width: 300px; min-height: 180px; margin-left: 300px; top: 100px">
                     <div class="topBar">
-                        <strong>Schedule</strong>
+                        <strong>Create Schedule</strong>
                         <div class="setting-Close" onclick="closeSchedulePanel();">
                             <span></span>
                         </div>

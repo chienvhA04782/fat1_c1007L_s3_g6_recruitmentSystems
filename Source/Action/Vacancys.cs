@@ -60,7 +60,8 @@ namespace Action
             try
             {
                 var db = new Share.RecruitmentEntities();
-                return (from c in db.Vacancys where c.Schedule_Id == scheduleId & c.Vacancy_Status == "Done" select c).Count();
+                int couns = (from c in db.Vacancys where c.Vacancy_Status.Trim().Equals("Done") & c.Schedule_Id == scheduleId select c).Count();
+                return couns;
             }
             catch (Exception e)
             {
@@ -80,7 +81,7 @@ namespace Action
             {
                 var db = new Share.RecruitmentEntities();
                 return
-                    (from c in db.Vacancys where c.Schedule_Id == scheduleId & c.Vacancy_Status == "Waiting" select c)
+                    (from c in db.Vacancys where  c.Vacancy_Status.Trim().Equals("Waiting") & c.Schedule_Id == scheduleId  select c)
                         .Count();
             }
             catch (Exception e)

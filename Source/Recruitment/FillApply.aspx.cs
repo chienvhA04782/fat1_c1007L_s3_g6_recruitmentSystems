@@ -37,6 +37,11 @@ namespace Recruitment
             return _applicant.CreateApplicantByVacancysId(applicants);
         }
 
+        /// <summary>
+        /// Handles the Click event of the btnCreateApplicant control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         protected void btnCreateApplicant_Click(object sender, EventArgs e)
         {
 

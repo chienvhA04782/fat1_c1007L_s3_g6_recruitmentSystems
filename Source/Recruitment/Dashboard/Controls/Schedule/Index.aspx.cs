@@ -91,6 +91,29 @@ namespace Recruitment.Dashboard.Controls.Schedule
         }
 
         /// <summary>
+        /// Fetches all count vacancys.
+        /// </summary>
+        /// <param name="scheduleId">The schedule id.</param>
+        /// <returns></returns>
+        public string FetchAllCountVacancys(int scheduleId)
+        {
+            string str = string.Empty;
+            var stDone = _vacancys.FetchCountDoneVavancysByShedule(scheduleId);
+            var stPending = _vacancys.FetchCountPendingVacancysBySchedule(scheduleId);
+            if (stDone != 0)
+            {
+                str += "<span class='label label-success'>Done: "
+                    + stDone + "</span>";
+            }
+            if (stPending != 0)
+            {
+                str += "<span class='label label-warning'>Pending: "
+               + stPending + "</span>";
+            }
+            return str;
+        }
+
+        /// <summary>
         /// Fetches the result interviewer day by schedule.
         /// </summary>
         /// <returns></returns>

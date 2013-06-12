@@ -107,9 +107,10 @@
                             onclick="DisplayTooltip(<%#Eval("Schedule_Id")%>)">
                             <span class="label label-info"><%#FetchCountScheduleByDateSchedule(Convert.ToInt32(Eval("Schedule_Id")))%></span>
                             <%-- Done Status--%>
-                            [<%#FetchCountDoneVavancysByShedule(Convert.ToInt32(Eval("Schedule_Id")))%>
+                            [<%#FetchAllCountVacancys(Convert.ToInt32(Eval("Schedule_Id")))%>
+
                             <%-- Pending Status--%>
-                            <%#FetchCountPendingVacancysBySchedule(Convert.ToInt32(Eval("Schedule_Id")))%>]
+                           <%-- <%#FetchCountPendingVacancysBySchedule(Convert.ToInt32(Eval("Schedule_Id")))%>]--%>
                         </a>
                         <div class="Schedule_Tooltip Container-<%#Eval("Schedule_Id")%>">
                             <span class="close" onclick="$('.Schedule_Tooltip').hide();" title="Close this box"></span>

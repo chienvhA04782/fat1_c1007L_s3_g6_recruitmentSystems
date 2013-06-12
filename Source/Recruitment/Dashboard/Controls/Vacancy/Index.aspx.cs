@@ -168,7 +168,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
             int st = _applicant.FetchCountApplicantAdminConfirm(vacancysId);
             if (st != 0)
             {
-                return "<span class='label label-success'>"
+                return "<span class='label label-success' title='has confirm'>"
                        + st + "</span>&nbsp;";
             }
             return string.Empty;
@@ -184,7 +184,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
             var st = _applicant.FetchCountApplicantAdminNotConfirm(vacancysId);
             if (st != 0)
             {
-                return "<span class='label label-warning'>"
+                return "<span class='label label-warning' title='waiting confirm'>"
                        + st + "</span>&nbsp;";
             }
             return string.Empty;
