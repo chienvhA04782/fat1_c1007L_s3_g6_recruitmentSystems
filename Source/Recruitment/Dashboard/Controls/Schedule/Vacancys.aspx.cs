@@ -29,7 +29,7 @@ namespace Recruitment.Dashboard.Controls.Schedule
                 RdBridViewVacancyss.DataSource = FetchVacancysByInterviewerId();
                 RdBridViewVacancyss.DataBind();
             }
-            else if (Action.Admin.RoleAdmin.Trim().Equals("Admin"))
+            else
             {
                 if (Request.QueryString["ViewsId"] != null)
                 {
@@ -228,6 +228,17 @@ namespace Recruitment.Dashboard.Controls.Schedule
                 pn_updateToDoneVacancys.Visible = false;
             }
             DisplayAllVacancysBySchedule(_viewsId);
+        }
+
+        /// <summary>
+        /// Fetches the user name admin by admin id.
+        /// </summary>
+        /// <param name="adminId">The admin id.</param>
+        /// <returns></returns>
+        public string FetchUserNameAdminByAdminId(int adminId)
+        {
+            var admin = new Action.Admin();
+            return admin.FetchUserNameAdminByAdminId(adminId);
         }
     }
 }

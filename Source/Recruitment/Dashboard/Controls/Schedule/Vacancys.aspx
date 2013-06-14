@@ -45,16 +45,16 @@
                             </telerik:GridTemplateColumn>
                         </Columns>
                         <Columns>
-                            <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Interviewer" UniqueName="TemplateColumn">
+                            <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Time Interview" UniqueName="TemplateColumn">
                                 <ItemTemplate>
                                     <%#Eval("Vacancy_TimeInterViewer") %>
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
                         </Columns>
                         <Columns>
-                            <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="DateUp" UniqueName="TemplateColumn">
+                            <telerik:GridTemplateColumn FilterControlAltText="Filter TemplateColumn column" HeaderText="Interviewer" UniqueName="TemplateColumn">
                                 <ItemTemplate>
-                                    <%#Eval("Vacancy_DateUp") %>
+                                    <%#FetchUserNameAdminByAdminId(Convert.ToInt32(Eval("Admin_Id"))) %>
                                 </ItemTemplate>
                             </telerik:GridTemplateColumn>
                         </Columns>
