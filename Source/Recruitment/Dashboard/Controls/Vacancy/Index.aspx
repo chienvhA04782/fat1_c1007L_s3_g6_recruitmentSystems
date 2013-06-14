@@ -5,17 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <h3>Vacancys</h3>
-    <asp:UpdatePanel ID="upnVacancyBarTop" runat="server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
         <ContentTemplate>
             <asp:Literal ID="Ltr_action" runat="server"></asp:Literal>
             <div style="margin-bottom: 10px">
                 <asp:LinkButton ID="lbtn_Addnew" runat="server" OnClick="lbtn_Addnew_Click"
                     CssClass="btn" OnClientClick="return AddNewVacancys();">Add New</asp:LinkButton>
             </div>
-        </ContentTemplate>
-    </asp:UpdatePanel>
-    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-        <ContentTemplate>
             <telerik:RadGrid ID="RadGridListVacancys" runat="server" AutoGenerateColumns="False">
                 <MasterTableView>
                     <CommandItemSettings ExportToPdfText="Export to PDF"></CommandItemSettings>
@@ -70,7 +66,7 @@
                                             <asp:LinkButton ID="lbtn_IntervierThis" runat="server"
                                                 Visible='<%#FilterVacancysByScheduleShowCreateInterviewer(Convert.ToInt32(Eval("Vacancy_Id"))) %>'
                                                 CommandArgument='<%#Eval("Vacancy_Id")%>'
-                                                OnClick="lbtn_IntervierThis_Click" OnClientClick="ViewDetailsVacancysInInterViewer();">
+                                                OnClick="lbtn_IntervierThis_Click">
                                                 create schedule interview
                                             </asp:LinkButton>
                                         </li>
@@ -82,7 +78,7 @@
                                         <li><a href="#">Edit</a></li>
                                         <li>
                                             <asp:LinkButton ID="lbtnRemove" runat="server"
-                                                 OnClick="lbtnRemove_Click" CommandArgument='<%#Eval("Vacancy_Id")%>' OnClientClick="if(confirm('are you sure?')){return true;}return false;">Remove</asp:LinkButton>
+                                                OnClick="lbtnRemove_Click" CommandArgument='<%#Eval("Vacancy_Id")%>' OnClientClick="if(confirm('are you sure?')){return true;}return false;">Remove</asp:LinkButton>
                                         </li>
                                     </ul>
                                 </div>
@@ -121,15 +117,11 @@
                                 <td style="padding-left: 5px">Date Start</td>
                                 <td style="padding-top: 5px">
                                     <telerik:RadDatePicker ID="rdDate_Start" runat="server"></telerik:RadDatePicker>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="#dc2606" ErrorMessage="(*)" ControlToValidate="rdDate_Start">
-                                    </asp:RequiredFieldValidator>
                                 </td>
                                 <td>Date End
                                 </td>
                                 <td style="padding-top: 5px">
                                     <telerik:RadDatePicker ID="rdDate_End" runat="server"></telerik:RadDatePicker>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="#dc2606" runat="server" ErrorMessage="(*)" ControlToValidate="rdDate_End">
-                                    </asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                         </table>

@@ -18,14 +18,17 @@ namespace Recruitment.Dashboard.Controls.Vacancy
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            FetchAllListVancancys();
+            if (!IsPostBack)
+            {
+                FetchAllListVancancys();
 
-            // bin data for dropdownlist interviewer
-            dropdownListInterviewer.DataSource = FetchListRoleInterviewer();
+                // bin data for dropdownlist interviewer
+                dropdownListInterviewer.DataSource = FetchListRoleInterviewer();
 
-            dropdownListInterviewer.DataTextField = "Admin_Account";
-            dropdownListInterviewer.DataValueField = "Admin_Id";
-            dropdownListInterviewer.DataBind();
+                dropdownListInterviewer.DataTextField = "Admin_Account";
+                dropdownListInterviewer.DataValueField = "Admin_Id";
+                dropdownListInterviewer.DataBind();
+            }
         }
 
         /// <summary>
@@ -58,11 +61,12 @@ namespace Recruitment.Dashboard.Controls.Vacancy
                     Vacancy_Age = txtage.Text,
                     Vacancy_Description = txtDescription.Text,
                     Vacancy_DateUp = DateTime.Now.ToString(),
-                    Vacancy_DateStart = rdDate_Start.SelectedDate.ToString().Replace("12:00:00 AM",""),
-                    Vacancy_DateEnd = rdDate_End.SelectedDate.ToString().Replace("12:00:00 AM","")
+                    Vacancy_DateStart = rdDate_Start.SelectedDate.ToString().Replace("12:00:00 AM", ""),
+                    Vacancy_DateEnd = rdDate_End.SelectedDate.ToString().Replace("12:00:00 AM", "")
                 };
             // create
             Panel_ContentAddnew.Visible = false;
+
             _vacancy.CreateNewVacancys(vacancys);
             // reaload datasource
             FetchAllListVancancys();
@@ -77,6 +81,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         protected void lbtn_Addnew_Click(object sender, EventArgs e)
         {
             Panel_ContentAddnew.Visible = true;
+            panelCreateInterviewer.Visible = false;
         }
 
         /// <summary>
@@ -209,6 +214,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
         /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         public void lbtn_IntervierThis_Click(object sender, EventArgs e)
         {
+            Panel_ContentAddnew.Visible = false;
             panelCreateInterviewer.Visible = true;
 
             var lbtn = (LinkButton)sender;
@@ -225,7 +231,7 @@ namespace Recruitment.Dashboard.Controls.Vacancy
             var vacancys = new Share.Vacancy
                 {
                     Vacancy_Id = _idVacancys,
-                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", "").Replace("23:00:00",""),
+                    Vacancy_DateInterViewer = RadDatePicker_DateInter.SelectedDate.ToString().Replace("12:00:00 AM", "").Replace("23:00:00", ""),
                     Vacancy_TimeInterViewer = RadTimePicker_TimeInter.SelectedTime.ToString(),
                     Admin_Id = Convert.ToInt32(dropdownListInterviewer.SelectedValue)
                 };
